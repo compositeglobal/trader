@@ -1,0 +1,31 @@
+{
+  "userLocation": null,
+  "companies": [
+    {
+      "id": "17",
+      "name": "Test Dealer",
+      "logoUrl": "https://www.autotrader.ca/Images/Emails/EN-CA/trader-logo.png",
+      "distance": null,
+      "address": "405 The West Mall Ste 110",
+      "city": "Etobicoke",
+      "province": "ON",
+      "postalCode": "M9C 5J1",
+      "phoneNumber": "14167845200",
+      "longitude": 43.645570,
+      "latitude": -79.567360
+    },
+    {
+      "id": "792",
+      "name": "Another Dealer",
+      "logoUrl": null,
+      "distance": null,
+      "address": "6415 Steeles Avenue East",
+      "city": "Toronto",
+      "province": "ON",
+      "postalCode": "M1X 0C7",
+      "phoneNumber": "14167945220",
+      "longitude": 43.840070,
+      "latitude": -79.235660
+    }
+  ]
+}
