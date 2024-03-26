@@ -71,7 +71,7 @@ function initMap() {
 
     userLocationPromise.then(userLocation => {
 
-        fetch('https://run.mocky.io/v3/0fd5b1f6-ee50-4079-a11f-86eddc50babf')
+        fetch('https://cdn.jsdelivr.net/gh/compositeglobal/trader@main/dummy-data.json')
             .then(response => response.json())
             .then(data => {
             // Replace locations with companies
