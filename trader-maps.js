@@ -1,3 +1,5 @@
+const mapKey = 'AIzaSyAMf4ck6tVB7e6xjH0k2lAF1ymsZJUHP3I';
+
 // Function to calculate the distance between two points on the Earth
 
 function calculateDistance(lat1, lon1, lat2, lon2) {
@@ -18,9 +20,12 @@ function deg2rad(deg) {
     return deg * (Math.PI / 180)
 }
 
+// Initialize lastRequestedDirections variable
+let lastRequestedDirections = null;
 // Main map code responsible for creating the map, adding markers, and populating the list
 
 function initMap() {
+
     // Get the URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const latParam = parseFloat(urlParams.get('lat'));
@@ -71,11 +76,90 @@ function initMap() {
 
     userLocationPromise.then(userLocation => {
 
-        fetch('https://cdn.jsdelivr.net/gh/compositeglobal/trader@main/dummy-data.json')
+        function calculateAndDisplayRoute(directionsService, directionsRenderer, origin, destination, travelMode) {
+            directionsService.route(
+                {
+                    origin: origin,
+                    destination: destination,
+                    travelMode: travelMode
+                },
+                (response, status) => {
+                    console.log(destination);
+
+                    if (status === 'OK') {
+                        directionsRenderer.setDirections(response);
+
+                        // Get the destination address of the last leg
+                        let legs = response.routes[0].legs;
+                        let lastLeg = legs[legs.length - 1];
+                        let destinationAddress = lastLeg.end_address;
+
+                        document.querySelector('[data-map=destination]').innerHTML = destinationAddress;
+                    } else {
+                        window.alert('Directions request failed due to ' + status);
+                    }
+                }
+
+            );
+        }
+
+        // Get the update location element
+        const updateLocationElement = document.querySelector('[data-map="update-location"]');
+
+        if (updateLocationElement) {
+            updateLocationElement.addEventListener('click', () => {
+                // Get the postcode from the element with data-map="postcode"
+                const postcodeElement = document.querySelector('[data-map="postcode"]');
+                if (postcodeElement) {
+                    const postcode = postcodeElement.value;
+
+                    // Use Google Maps Geocoding API to get the latitude and longitude from the postcode
+                    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${postcode}&key=${mapKey}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            const location = data.results[0].geometry.location;
+
+                            // Update userLocation variable
+                            userLocation.lat = location.lat;
+                            userLocation.lng = location.lng;
+
+                        });
+                }
+
+                lastRequestedDirections.click();
+
+            });
+        }
+        // Use a geocoding service to get the postcode from the latitude and longitude
+        // This is a placeholder and should be replaced with a real geocoding service
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${userLocation.lat},${userLocation.lng}&key=${mapKey}`)
             .then(response => response.json())
             .then(data => {
-            // Replace locations with companies
-            const locations = data.companies;
+                // Set the postcode in the element with the attribute data-map="postcode"
+                const postcodeElement = document.querySelector('[data-map="postcode"]');
+                if (postcodeElement) {
+                    const postcode = data.results[0].address_components.find(component => component.types.includes('postal_code')).short_name;
+                    postcodeElement.value = postcode;
+                }
+
+                // Add an event listener to update the user's location when the postcode is changed
+                postcodeElement.addEventListener('change', event => {
+                    // Use a geocoding service to get the latitude and longitude from the postcode
+                    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${event.target.value}&key=${mapKey}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            userLocation.lat = data.results[0].geometry.location.lat;
+                            userLocation.lng = data.results[0].geometry.location.lng;
+                        });
+                });
+            });
+
+        // https://cdn.jsdelivr.net/gh/Qwen2020/composite@main/dealers-dummy.json
+        fetch('https://cdn.jsdelivr.net/gh/Qwen2020/composite@main/dealers-dummy.json')
+            .then(response => response.json())
+            .then(data => {
+                // Replace locations with companies
+                const locations = data.companies;
 
                 // Calculate the distance between the user's location and each location
                 locations.forEach(location => {
@@ -114,25 +198,6 @@ function initMap() {
                 // Set the panel for the DirectionsRenderer
                 let panelElement = document.querySelector('[data-maps-directions]');
                 directionsRenderer.setPanel(panelElement);
-                function calculateAndDisplayRoute(directionsService, directionsRenderer, origin, destination, travelMode) {
-                    directionsService.route(
-                        {
-                            origin: origin,
-                            destination: destination,
-                            travelMode: travelMode
-                        },
-                        (response, status) => {
-
-console.log(destination);
-
-                            if (status === 'OK') {
-                                directionsRenderer.setDirections(response);
-                            } else {
-                                window.alert('Directions request failed due to ' + status);
-                            }
-                        }
-                    );
-                }
 
                 // Get the list and the template list item
                 const list = document.querySelector('[data-map-list]');
@@ -207,6 +272,10 @@ console.log(destination);
                                 };
                                 calculateAndDisplayRoute(directionsService, directionsRenderer, userLocation, destinationLocation, google.maps.TravelMode.DRIVING);
 
+                                lastRequestedDirections = element;
+
+                                console.log(lastRequestedDirections);
+                                
                                 // Simulate a click on the element with the data-maps-directions-open attribute
                                 let openElement = document.querySelector('[data-maps-directions-open]');
                                 if (openElement) {
