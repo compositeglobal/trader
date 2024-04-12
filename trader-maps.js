@@ -154,8 +154,15 @@ function initMap() {
                 });
             });
 
-        // https://cdn.jsdelivr.net/gh/Qwen2020/composite@main/dealers-dummy.json
-        fetch('https://cdn.jsdelivr.net/gh/Qwen2020/composite@main/dealers-dummy.json')
+        // Get the manufacturer from the meta tag
+        const metaTag = document.querySelector('meta[name="manufacturer"]');
+        const manufacturer = metaTag && metaTag.getAttribute('content');
+
+        // Construct the URL
+        const url = `https://cdn.jsdelivr.net/gh/${manufacturer}/composite@main/dealers-dummy.json`;
+
+        // Fetch the data
+        fetch(url)
             .then(response => response.json())
             .then(data => {
                 // Replace locations with companies
@@ -275,7 +282,7 @@ function initMap() {
                                 lastRequestedDirections = element;
 
                                 console.log(lastRequestedDirections);
-                                
+
                                 // Simulate a click on the element with the data-maps-directions-open attribute
                                 let openElement = document.querySelector('[data-maps-directions-open]');
                                 if (openElement) {
