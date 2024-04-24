@@ -1,6 +1,3 @@
-console.log('dev mode enabled')
-
-
 document.addEventListener('DOMContentLoaded', () => {
 
     let cards = document.querySelectorAll('[data-at-card]');
