@@ -1,3 +1,5 @@
+// Maps key needs mirgrating to production key and the dummy data should be replaced with production once that is confirmed. 
+
 const mapKey = 'AIzaSyAMf4ck6tVB7e6xjH0k2lAF1ymsZJUHP3I';
 
 // Function to calculate the distance between two points on the Earth
