@@ -7,12 +7,12 @@
       "logoUrl": "https://www.autotrader.ca/Images/Emails/EN-CA/trader-logo.png",
       "distance": null,
       "address": "405 The West Mall Ste 110",
-      "city": "Etobicoke",
-      "province": "ON",
-      "postalCode": "M9C 5J1",
+      "city": "Vancouver",
+      "province": "BC",
+      "postalCode": "V5K 0A1",
       "phoneNumber": "14167845200",
-      "longitude": 43.645570,
-      "latitude": -79.567360
+      "longitude": 49.2827,
+      "latitude": -123.1207
     },
     {
       "id": "792",
@@ -20,12 +20,51 @@
       "logoUrl": null,
       "distance": null,
       "address": "6415 Steeles Avenue East",
+      "city": "Edmonton",
+      "province": "AB",
+      "postalCode": "T5H 0N9",
+      "phoneNumber": "14167945220",
+      "longitude": 53.5444,
+      "latitude": -113.4909
+    },
+    {
+      "id": "793",
+      "name": "Third Dealer",
+      "logoUrl": null,
+      "distance": null,
+      "address": "123 Main Street",
       "city": "Toronto",
       "province": "ON",
-      "postalCode": "M1X 0C7",
-      "phoneNumber": "14167945220",
-      "longitude": 43.840070,
-      "latitude": -79.235660
+      "postalCode": "M5H 2N2",
+      "phoneNumber": "14167945221",
+      "longitude": 43.6532,
+      "latitude": -79.3832
+    },
+    {
+      "id": "794",
+      "name": "Fourth Dealer",
+      "logoUrl": null,
+      "distance": null,
+      "address": "456 Secondary Street",
+      "city": "Montreal",
+      "province": "QC",
+      "postalCode": "H3Z 2Z7",
+      "phoneNumber": "14167945222",
+      "longitude": 45.5017,
+      "latitude": -73.5673
+    },
+    {
+      "id": "795",
+      "name": "Fifth Dealer",
+      "logoUrl": null,
+      "distance": null,
+      "address": "789 Tertiary Street",
+      "city": "Halifax",
+      "province": "NS",
+      "postalCode": "B3K 5E5",
+      "phoneNumber": "14167945223",
+      "longitude": 44.6488,
+      "latitude": -63.5752
     }
   ]
 }
