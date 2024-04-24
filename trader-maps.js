@@ -267,6 +267,14 @@ function initMap() {
 
                         if (location.hasOwnProperty(key)) {
                             li.setAttribute('data-gtm-content-name', location['name']);
+
+                            var directionButton = li.querySelector('[data-map="direction-button"]');
+                            if (directionButton) {
+                                directionButton.setAttribute('data-gtm-content-name', location['name']);
+                            }
+
+                            li.setAttribute('data-gtm-content-name', location['name']);
+
                             if (element.hasAttribute('data-map')) {
                                 element.innerHTML = location[key];
                             } else if (element.hasAttribute('data-map-image')) {
