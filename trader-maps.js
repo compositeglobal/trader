@@ -130,6 +130,7 @@ function initMap() {
 
             });
         }
+
         // Use a geocoding service to get the postcode from the latitude and longitude
         // This is a placeholder and should be replaced with a real geocoding service
         fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${userLocation.lat},${userLocation.lng}&key=${mapKey}`)
@@ -159,7 +160,7 @@ function initMap() {
         const manufacturer = metaTag && metaTag.getAttribute('content');
 
         // Construct the URL
-        const url = `https://cdn.jsdelivr.net/gh/${manufacturer}/composite@main/dealers-dummy.json`;
+        const url = `https://cdn.jsdelivr.net/gh/compositeglobal/trader@latest/dummy-data.json`;
 
         // Fetch the data
         fetch(url)
@@ -255,12 +256,17 @@ function initMap() {
                     });
 
                     // Clone the template and populate it with data
+
+
                     const li = template.cloneNode(true);
+
                     li.querySelectorAll('[data-map], [data-map-image], [data-map-distance]').forEach(element => {
                         const key = element.hasAttribute('data-map') ? element.getAttribute('data-map') :
                             element.hasAttribute('data-map-image') ? element.getAttribute('data-map-image') :
                                 'distance';
+
                         if (location.hasOwnProperty(key)) {
+                            li.setAttribute('data-gtm-content-name', location['name']);
                             if (element.hasAttribute('data-map')) {
                                 element.innerHTML = location[key];
                             } else if (element.hasAttribute('data-map-image')) {
