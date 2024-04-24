@@ -1,3 +1,6 @@
+console.log('dev mode enabled')
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
     let cards = document.querySelectorAll('[data-at-card]');
@@ -97,6 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const itemClone = clone.cloneNode(true);
 
                 dataTrims.appendChild(itemClone);
+
+                itemClone.setAttribute('data-gtm-content-name', (index + 1)  + ' - ' + item['name']);
 
                 itemClone.querySelectorAll('[data-trim-text]').forEach(el => {
                     const keys = el.getAttribute('data-trim-text').split('-');
