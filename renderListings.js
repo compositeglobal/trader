@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const manufacturerMeta = document.querySelector('meta[name="manufacturer"]');
         const modelMeta = document.querySelector('meta[name="model"]');
-        let url = 'https://apimci.autotrader.ca/research/v1/vehicle-inventory?make=';
+        let url = 'https://apimqa.autotrader.ca/research/v1/vehicle-inventory?make=';
 
         if (manufacturerMeta) {
             url += manufacturerMeta.getAttribute('content');
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const yearMeta = document.querySelector('meta[name="year"]');
         const year = yearMeta && yearMeta.content ? yearMeta.content : "2023";
 
-        const url = `https://apimci.autotrader.ca/research/v1/trims-information?make=${make}&model=${model}&year=${year}`;
+        const url = `https://apimqa.autotrader.ca/research/v1/trims-information?make=${make}&model=${model}&year=${year}`;
 
         fetch(url)
             .then(response => response.json())
