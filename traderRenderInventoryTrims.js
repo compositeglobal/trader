@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.addEventListener('click', handleClick);
                 });
 
-            };
+            });
 
     }
 
