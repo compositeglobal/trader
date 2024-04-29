@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 function handleClick(event) {
                     let index = Array.from(event.target.parentNode.children).indexOf(event.target);
         
-                    let dataPush = generateDataPush([items[index]], [items[index]]);
+                    let dataPush = generateDataPush([items[index]], items[index]);
                     console.log(JSON.stringify(dataPush, null, 2));
         
                     dataLayer.push(dataPush);
