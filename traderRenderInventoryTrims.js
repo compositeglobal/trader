@@ -139,11 +139,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     items.push(item);
                 });
         
-                function generateDataPush(items, vehicle) {
+                function generateDataPush(items, vehicle, type) {
                     let elementTitle = document.querySelector('[data-push-title]');
         
                     let dataPush = {
-                        'event': 'select_item',
+                        'event': type,
                         'listKey': elementTitle.textContent.replace(/\n/g, ' ').trim(),
                         'ecommerce': { 'item_list_name': 'storefront - ' + elementTitle.textContent.replace(/\n/g, ' ').trim(), items },
                         'vehicle': vehicle,
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     return dataPush;
                 }
         
-                let dataPush = generateDataPush(items, null);
+                let dataPush = generateDataPush(items, null, 'view_item_list');
                 console.log(JSON.stringify(dataPush, null, 2));
         
                 dataLayer.push(dataPush);
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 function handleClick(event) {
                     let index = Array.from(event.target.parentNode.children).indexOf(event.target);
         
-                    let dataPush = generateDataPush([items[index]], items[index]);
+                    let dataPush = generateDataPush([items[index]], items[index], 'select_item');
                     console.log(JSON.stringify(dataPush, null, 2));
         
                     dataLayer.push(dataPush);
