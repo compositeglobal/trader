@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     let itemMapping = {
                         'item_id': 'trackingid',
                         'item_name': 'model', // add brand and model
-                        'item_brand': 'ad_dealer_id',
+                        'item_brand': 'make',
                         'ad_dealer_id': 'dealer-trackingid',
                         'price': 'price',
                         'quantity': '1',
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 let dataPush = generateDataPush(items, 'null', 'view_item_list');
-                
+
                 dataLayer.push(dataPush);
 
                 function handleClick(event) {
