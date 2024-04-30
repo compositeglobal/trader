@@ -171,13 +171,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         'year': 'year'
                     };
 
-                    for (let key in item) {
-                        let attrName = 'data-an-' + itemMapping[key];
-                        let attr = parent.getAttribute(attrName);
-
-                                item[key] = attr;    
-                            
+                        if (attr !== null) {
+                            if (key === 'item_name') {
+                                var metaContent = document.querySelector('meta[name="manufacturer"]').content;
+                                item[key] = metaContent + ' | ' + attr;
+                            } else {
+                                item[key] = attr;
                             }
+                        }
 
                     vehicle.push(item);
                 });
