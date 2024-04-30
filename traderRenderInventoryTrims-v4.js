@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     let itemMapping = {
                         'item_id': 'trackingid',
                         'item_name': 'model', // add brand and model
-                        'item_brand': 'ad_dealer_id',
+                        'item_brand': 'trackingid',
                         'ad_dealer_id': 'dealer-trackingid',
                         'price': 'price',
                         'quantity': '1',
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     let item = {
                         'adID': '<AD ID>',
                         'upgradesApplied': 'not used',
-                        'dealerID': 'ad_dealer_id',
+                        'dealerID': 'trackingid',
                         'listingPosition': 'organic',
                         'make': '<MAKE>',
                         'model': '<MODEL>',
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     let itemMapping = {
                         'adID': 'trackingid',
-                        'dealerID': 'ad_dealer_id',
+                        'dealerID': 'trackingid',
                         'upgradesApplied': 'not used',
                         'make': 'make',
                         'model': 'model',
