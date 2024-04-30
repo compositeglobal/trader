@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         'model': '<MODEL>',
                         'price': '<PRICE>',
                         'province': '<PROVINCE>',
-                        'rawLocation': '<RAW LOCATION>',
+                        'rawLocation': '',
                         'year': '<YEAR>'
                     };
 
