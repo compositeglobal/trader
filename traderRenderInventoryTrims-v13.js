@@ -188,23 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     vehicle.push(item);
                 });
 
-                function generateViewDataPush(items, type) {
-                    let elementTitle = document.querySelector('[data-push-title]');
 
-                    let dataPush = {
-                        'event': type,
-                        'listKey': elementTitle.textContent.replace(/\n/g, ' ').trim(),
-                        'ecommerce': { 'item_list_name': 'storefront - ' + elementTitle.textContent.replace(/\n/g, ' ').trim(), items },
-                    }
-
-                    return dataPush;
-                }
-
-                let dataPushView = generateViewDataPush(items, 'view_item_list');
-
-                dataPushView.push(dataPushView);
-
-                function generateClickDataPush(items, vehicle, type) {
+                function generateDataPush(items, vehicle, type) {
                     let elementTitle = document.querySelector('[data-push-title]');
 
                     let dataPush = {
@@ -217,10 +202,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     return dataPush;
                 }
 
+                let dataPush = generateDataPush(items, 'null', 'view_item_list');
+
+                dataLayer.push(dataPush);
+
                 function handleClick(event) {
                     let index = Array.from(event.target.parentNode.children).indexOf(event.target);
 
-                    let dataPush = generateClickDataPush([items[index]], vehicle[index], 'select_item');
+                    let dataPush = generateDataPush([items[index]], vehicle[index], 'select_item');
 
                     dataLayer.push(dataPush);
                 }
