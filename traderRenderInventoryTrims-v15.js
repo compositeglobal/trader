@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 let dataPushView = generateViewDataPush(items, 'view_item_list');
 
-                dataPushView.push(dataPushView);
+                dataPush.push(dataPushView);
 
                 function generateClickDataPush(items, vehicle, type) {
                     let elementTitle = document.querySelector('[data-push-title]');
