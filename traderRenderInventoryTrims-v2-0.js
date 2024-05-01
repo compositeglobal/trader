@@ -1,3 +1,5 @@
+/* Inventory */ 
+
 document.addEventListener('DOMContentLoaded', () => {
 
     let cards = document.querySelectorAll('[data-at-card]');
@@ -188,39 +190,30 @@ document.addEventListener('DOMContentLoaded', () => {
                     vehicle.push(item);
                 });
 
-                function generateViewDataPush(items, type) {
+                function generateDataPush(items, type, vehicle) {
                     let elementTitle = document.querySelector('[data-push-title]');
 
                     let dataPush = {
                         'event': type,
                         'listKey': elementTitle.textContent.replace(/\n/g, ' ').trim(),
-                        'ecommerce': { 'item_list_name': 'storefront - ' + elementTitle.textContent.replace(/\n/g, ' ').trim(), items },
+                        'ecommerce': { 'item_list_name': 'storefront - ' + elementTitle.textContent.replace(/\n/g, ' ').trim(), items }
+                    };
+                    
+                    if (vehicle != null) {
+                        dataPush['vehicle'] = vehicle;
                     }
 
                     return dataPush;
                 }
 
-                let dataPushView = generateViewDataPush(items, 'view_item_list');
+                let dataPush = generateDataPush(items, 'view_item_list');
 
-                dataPush.push(dataPushView);
-
-                function generateClickDataPush(items, vehicle, type) {
-                    let elementTitle = document.querySelector('[data-push-title]');
-
-                    let dataPush = {
-                        'event': type,
-                        'listKey': elementTitle.textContent.replace(/\n/g, ' ').trim(),
-                        'ecommerce': { 'item_list_name': 'storefront - ' + elementTitle.textContent.replace(/\n/g, ' ').trim(), items },
-                        'vehicle': vehicle,
-                    }
-
-                    return dataPush;
-                }
+                dataLayer.push(dataPush);
 
                 function handleClick(event) {
                     let index = Array.from(event.target.parentNode.children).indexOf(event.target);
 
-                    let dataPush = generateClickDataPush([items[index]], vehicle[index], 'select_item');
+                    let dataPush = generateDataPush([items[index]], 'select_item', vehicle[index]);
 
                     dataLayer.push(dataPush);
                 }
@@ -234,6 +227,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+/* Trims */
 
 document.addEventListener('DOMContentLoaded', () => {
 
