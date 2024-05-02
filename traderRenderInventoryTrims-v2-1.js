@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        fetch(url)
+fetch(url, { credentials: 'include' })
             .then(response => response.json())
             .then(data => {
                 document.body.removeAttribute('data-skeleton');
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const url = `https://apimqa.autotrader.ca/research/v1/trims-information?make=${make}&model=${model}&year=${year}`;
 
-        fetch(url)
+fetch(url, { credentials: 'include' })
             .then(response => response.json())
             .then(data => {
                 const dataTrims = document.querySelector('[data-trims]');
