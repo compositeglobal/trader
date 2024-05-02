@@ -162,7 +162,7 @@ function initMap() {
         const manufacturer = metaTag && metaTag.getAttribute('content');
 
         // Construct the URL
-        const url = `https://cdn.jsdelivr.net/gh/compositeglobal/trader@latest/dummy-data.json`;
+        const url = `https://apimqa.autotrader.ca/research/v1/dealer-search?oemName=` + manufacturer;
 
         // Fetch the data
         fetch(url)
