@@ -305,10 +305,6 @@ function initMap() {
                                     openElement.click();
                                 }
                             });
-
-                            element.setAttribute('data-gtm-content-name', 'get directions'); 
-                            element.setAttribute('data-gtm-content-model', location['name']); 
-
                         }
                     });
                     li.addEventListener('click', () => {
