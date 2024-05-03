@@ -258,7 +258,7 @@ fetch(url, { credentials: 'include' })
 
                     itemClone.setAttribute('data-gtm-content-name', (index + 1) + ' - ' + item['name']);
 
-                    itemClone.querySelectorAll('[data-gtm-content-model]').setAttribute('data-gtm-content-model', item['name']);
+                    itemClone.querySelector('[data-gtm-content-model]').setAttribute('data-gtm-content-model', item['name']);
 
                     itemClone.querySelectorAll('[data-trim-text]').forEach(el => {
                         const keys = el.getAttribute('data-trim-text').split('-');
