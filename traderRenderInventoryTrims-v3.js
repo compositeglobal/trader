@@ -36,6 +36,8 @@ fetch(url, { credentials: 'include' })
                     const vehicle = data.vehicles[index];
                     if (vehicle) {
 
+                        card.setAttribute('data-an-position', index + 1);
+
                         for (let key in vehicle) {
                             if (typeof vehicle[key] === 'object' && vehicle[key] !== null) {
                                 // If the value is an object, add data attributes for each key in the object
@@ -112,7 +114,7 @@ fetch(url, { credentials: 'include' })
                         'ad_position': 'organic',
                         'ad_active_upsells': 'organic',
                         'ad_upgrades_applied': 'not used',
-                        'index': index + 1
+                        'positions': ''
                     };
 
                     let itemMapping = {
@@ -128,6 +130,8 @@ fetch(url, { credentials: 'include' })
                         'ad_province': 'province',
                         'ad_year': 'year',
                         'ad_position': 'ad-position',
+                        'positions': 'position'
+
                     };
 
                     for (let key in item) {
@@ -211,10 +215,12 @@ fetch(url, { credentials: 'include' })
                 dataLayer.push(dataPush);
 
                 function handleClick(event) {
-                    let index = Array.from(event.target.parentNode.children).indexOf(event.target);
-
+                    let link = event.target.closest('a');
+                    let parentElement = link.parentNode;
+                    let index = Array.from(parentElement.parentNode.children).indexOf(parentElement);
+                
                     let dataPush = generateDataPush([items[index]], 'select_item', vehicle[index]);
-
+                
                     dataLayer.push(dataPush);
                 }
 
@@ -256,7 +262,7 @@ fetch(url, { credentials: 'include' })
 
                     dataTrims.appendChild(itemClone);
 
-                    itemClone.setAttribute('data-gtm-content-name', (index + 1) + ' - ' + item['name']);
+                    itemClone.setAttribute('data-gtm-content-name', 'Slide ' + (index + 1) + ' - ' + item['name']);
 
                     itemClone.querySelector('[data-gtm-content-model]').setAttribute('data-gtm-content-model', item['name']);
 
