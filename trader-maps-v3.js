@@ -309,14 +309,14 @@ function initMap() {
                                 'distance';
 
                         if (location.hasOwnProperty(key)) {
-                            li.setAttribute('data-gtm-content-name', location['name']);
+                            li.setAttribute('data-gtm-content-model', location['name']);
 
                             var directionButton = li.querySelector('[data-map="direction-button"]');
                             if (directionButton) {
-                                directionButton.setAttribute('data-gtm-content-name', location['name']);
+                                directionButton.setAttribute('data-gtm-content-model', location['name']);
                             }
 
-                            li.setAttribute('data-gtm-content-name', location['name']);
+                            li.setAttribute('data-gtm-content-model', location['name']);
 
                             if (element.hasAttribute('data-map') && element.getAttribute('data-map') === 'phoneNumber') {
                                 
