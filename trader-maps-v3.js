@@ -237,7 +237,7 @@ function initMap() {
                         <div class="maps_infowindow maps_tip_heading">
                         <div class="maps_infowindow_header">
 
-                        <img src="${location.logoUrl}" loading="lazy" alt="" class="image">
+                        <img src="${location.logoUrl}" loading="lazy" alt="" class="maps_infoWindow_image">
                         
                         <div class="maps_infowindow_heading">${location.name}</div></div>
                         
