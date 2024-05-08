@@ -226,6 +226,12 @@ function initMap() {
                     destinationLocation = location.latitude + ',' + location.longitude;
 
                     // Create an InfoWindow for the marker
+
+                    let phoneNumber = location.phoneNumber;
+                    if (phoneNumber) {
+                        phoneNumber = phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+                    }
+
                     const infoWindow = new google.maps.InfoWindow({
                         content: `
                         <div class="maps_infowindow maps_tip_heading">
@@ -256,7 +262,7 @@ function initMap() {
                         <path d="M3.86167 6.29417C4.70167 7.945 6.055 9.29833 7.70583 10.1383L8.98917 8.855C9.1525 8.69167 9.38 8.645 9.58417 8.70917C10.2375 8.925 10.9375 9.04167 11.6667 9.04167C11.8214 9.04167 11.9697 9.10312 12.0791 9.21252C12.1885 9.32192 12.25 9.47029 12.25 9.625V11.6667C12.25 11.8214 12.1885 11.9697 12.0791 12.0791C11.9697 12.1885 11.8214 12.25 11.6667 12.25C9.0366 12.25 6.51426 11.2052 4.65452 9.34548C2.79479 7.48574 1.75 4.9634 1.75 2.33333C1.75 2.17862 1.81146 2.03025 1.92085 1.92085C2.03025 1.81146 2.17862 1.75 2.33333 1.75H4.375C4.52971 1.75 4.67808 1.81146 4.78748 1.92085C4.89687 2.03025 4.95833 2.17862 4.95833 2.33333C4.95833 3.0625 5.075 3.7625 5.29083 4.41583C5.355 4.62 5.30833 4.8475 5.145 5.01083L3.86167 6.29417Z" fill="#3E3E3E"></path>
                         </svg></div>
                         
-                        <div><a target="_blank" href="tel:${location.phoneNumber}">${location.phoneNumber}</a></div>
+                        <div><a target="_blank" href="tel:${location.phoneNumber}">${phoneNumber}</a></div>
                         
                         </li>
 
