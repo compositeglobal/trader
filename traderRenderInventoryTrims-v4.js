@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 url += '&model=' + modelMeta.getAttribute('content');
             }
             if (modelMeta) {
-                url += '&minyear=' + modelMinYear.getAttribute('content');
+                url += '&minYear=' + modelMinYear.getAttribute('content');
             }
         }
 
