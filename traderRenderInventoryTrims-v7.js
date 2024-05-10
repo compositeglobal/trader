@@ -1,4 +1,4 @@
-/* Inventory */ 
+/* Inventory */
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const manufacturerMeta = document.querySelector('meta[name="manufacturer"]');
         const modelMeta = document.querySelector('meta[name="model"]');
-        const modelMinYear =  document.querySelector('meta[name="modelYear"]');
+        const modelMinYear = document.querySelector('meta[name="modelYear"]');
         let url = 'https://apimqa.autotrader.ca/research/v1/vehicle-inventory?make=';
 
         if (manufacturerMeta) {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-fetch(url, { credentials: 'include' })
+        fetch(url, { credentials: 'include' })
             .then(response => response.json())
             .then(data => {
                 document.body.removeAttribute('data-skeleton');
@@ -32,6 +32,12 @@ fetch(url, { credentials: 'include' })
                         cards[i].remove();
                     }
                 }
+
+                // Update href of all elements with 'data-at-inventory-url' attribute
+                const inventoryUrlElements = document.querySelectorAll('[data-at-inventory-url]');
+                inventoryUrlElements.forEach(element => {
+                    element.href = data.searchUrl;
+                });
 
                 // Update the cards NodeList to reflect the removed cards
                 cards = document.querySelectorAll('[data-at-card]');
@@ -206,7 +212,7 @@ fetch(url, { credentials: 'include' })
                         'listKey': elementTitle.textContent.replace(/\n/g, ' ').trim(),
                         'ecommerce': { 'item_list_name': 'storefront - ' + elementTitle.textContent.replace(/\n/g, ' ').trim(), items }
                     };
-                    
+
                     if (vehicle != null) {
                         dataPush['vehicle'] = vehicle;
                     }
@@ -222,9 +228,9 @@ fetch(url, { credentials: 'include' })
                     let link = event.target.closest('a');
                     let parentElement = link.parentNode;
                     let index = Array.from(parentElement.parentNode.children).indexOf(parentElement);
-                
+
                     let dataPush = generateDataPush([items[index]], 'select_item', vehicle[index]);
-                
+
                     dataLayer.push(dataPush);
                 }
 
@@ -253,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const url = `https://apimqa.autotrader.ca/research/v1/trims-information?make=${make}&model=${model}&year=${year}`;
 
-fetch(url, { credentials: 'include' })
+        fetch(url, { credentials: 'include' })
             .then(response => response.json())
             .then(data => {
                 const dataTrims = document.querySelector('[data-trims]');
@@ -286,7 +292,7 @@ fetch(url, { credentials: 'include' })
                         keys.forEach(key => {
                             value = value[key];
                         });
-                    
+
                         if (value) {
                             el.src = value;
                         }
