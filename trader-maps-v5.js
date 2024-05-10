@@ -334,6 +334,7 @@ element.href = `tel:${location[key]}`;
                             } else if (element.hasAttribute('data-map-image')) {
                                 if (location[key] && location[key].trim() !== '') {
                                     element.src = location[key];
+                                    element.srcset = location[key];
                                 }  
                                                       } else if (element.hasAttribute('data-map-distance')) {
                                 element.textContent = `${location[key].toFixed(2)} km`;
