@@ -286,8 +286,10 @@ fetch(url, { credentials: 'include' })
                         keys.forEach(key => {
                             value = value[key];
                         });
-
-                        el.src = value;
+                    
+                        if (value) {
+                            el.src = value;
+                        }
                     });
 
                     itemClone.querySelectorAll('[data-trim-count]').forEach(el => {
