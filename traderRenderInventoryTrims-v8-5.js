@@ -265,31 +265,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 dataTrimsElements.forEach(dataTrims => {
 
-                    const clone = dataTrims.firstElementChild.cloneNode(true);
+                const clone = dataTrims.firstElementChild.cloneNode(true);
 
-                    dataTrims.innerHTML = '';
+                data.forEach((item, index) => {
+                    const itemClone = clone.cloneNode(true);
 
-                    data.forEach((item, index) => {
-                        const itemClone = clone.cloneNode(true);
+                    dataTrims.appendChild(itemClone);
 
-                        dataTrims.appendChild(itemClone);
+                    itemClone.setAttribute('data-gtm-content-name', 'Slide ' + (index + 1) + ' - ' + item['name']);
 
-                        itemClone.setAttribute('data-gtm-content-name', 'Slide ' + (index + 1) + ' - ' + item['name']);
+                    itemClone.querySelector('[data-gtm-content-model]').setAttribute('data-gtm-content-model', item['name']);
 
-                        itemClone.querySelector('[data-gtm-content-model]').setAttribute('data-gtm-content-model', item['name']);
-
-                        itemClone.querySelectorAll('[data-trim-text]').forEach(el => {
-                            const keys = el.getAttribute('data-trim-text').split('-');
-                            let value = item;
-                            keys.forEach(key => {
-                                value = value[key];
-                            });
-
-                            el.innerHTML = value;
+                    itemClone.querySelectorAll('[data-trim-text]').forEach(el => {
+                        const keys = el.getAttribute('data-trim-text').split('-');
+                        let value = item;
+                        keys.forEach(key => {
+                            value = value[key];
                         });
 
-                        itemClone.querySelectorAll('[data-trim-image]').forEach(el => {
-                            const keys = el.getAttribute('data-trim-image').split('-');
+                        el.innerHTML = value;
+                    });
+
+                    itemClone.querySelectorAll('[data-trim-image]').forEach(el => {
+                        const keys = el.getAttribute('data-trim-image').split('-');
                         let value = item;
                         keys.forEach(key => {
                             value = value[key];
@@ -395,7 +393,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         });
                     });
                 });
+
             });
     }
-
 });
