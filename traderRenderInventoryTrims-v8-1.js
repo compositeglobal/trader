@@ -263,9 +263,9 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(data => {
                 const dataTrims = document.querySelectorAll('[data-trims]');
-                const clone = dataTrims.firstElementChild.cloneNode(true);
-
+                
                 dataTrims.forEach(el => {
+                const clone = el.firstElementChild.cloneNode(true);
 
                 el.innerHTML = '';
 
