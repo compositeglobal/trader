@@ -404,5 +404,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 });
             });
+
+        // Update the slides
+swiperTrims.updateSlides();
+        
     }
 });
