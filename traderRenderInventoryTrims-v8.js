@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const dataTrims = document.querySelector('[data-trims]');
+    const dataTrims = document.querySelectorAll('[data-trims]');
 
     if (dataTrims) {
 
@@ -262,15 +262,17 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch(url, { credentials: 'include' })
             .then(response => response.json())
             .then(data => {
-                const dataTrims = document.querySelector('[data-trims]');
+                const dataTrims = document.querySelectorAll('[data-trims]');
                 const clone = dataTrims.firstElementChild.cloneNode(true);
 
-                dataTrims.innerHTML = '';
+                dataTrims.forEach(el => {
+
+                el.innerHTML = '';
 
                 data.forEach((item, index) => {
                     const itemClone = clone.cloneNode(true);
 
-                    dataTrims.appendChild(itemClone);
+                    el.appendChild(itemClone);
 
                     itemClone.setAttribute('data-gtm-content-name', 'Slide ' + (index + 1) + ' - ' + item['name']);
 
@@ -361,6 +363,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
 
                 });
+
+            });
 
                 const totalEl = document.querySelector('[data-trim-total]');
                 if (totalEl) {
