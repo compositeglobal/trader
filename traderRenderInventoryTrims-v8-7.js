@@ -267,6 +267,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     const clone = dataTrims.firstElementChild.cloneNode(true);
 
+                    dataTrims.innerHTML = '';
+
                     data.forEach((item, index) => {
                         const itemClone = clone.cloneNode(true);
 
