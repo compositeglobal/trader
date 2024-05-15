@@ -395,7 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         });
                     });
                 });
-
             });
     }
+
 });
