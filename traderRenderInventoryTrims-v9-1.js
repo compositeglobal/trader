@@ -273,6 +273,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         const itemClone = clone.cloneNode(true);
 
                         dataTrims.appendChild(itemClone);
+                                // Update the slides
+swiperTrims.updateSlides();
 
                         itemClone.setAttribute('data-gtm-content-name', 'Slide ' + (index + 1) + ' - ' + item['name']);
 
@@ -404,9 +406,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 });
             });
-
-        // Update the slides
-swiperTrims.updateSlides();
         
     }
 });
