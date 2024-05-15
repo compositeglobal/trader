@@ -248,9 +248,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const dataTrims = document.querySelectorAll('[data-trims]');
+    const dataTrimsElements = document.querySelectorAll('[data-trims]');
 
-    if (dataTrims) {
+    if (dataTrimsElements.length > 0) {
 
         const make = document.querySelector('meta[name="make"]').content;
         const model = document.querySelector('meta[name="model"]').content;
@@ -262,34 +262,34 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch(url, { credentials: 'include' })
             .then(response => response.json())
             .then(data => {
-                const dataTrims = document.querySelectorAll('[data-trims]');
-                
-                dataTrims.forEach(el => {
-                const clone = el.firstElementChild.cloneNode(true);
 
-                el.innerHTML = '';
+                dataTrimsElements.forEach(dataTrims => {
 
-                data.forEach((item, index) => {
-                    const itemClone = clone.cloneNode(true);
+                    const clone = dataTrims.firstElementChild.cloneNode(true);
 
-                    el.appendChild(itemClone);
+                    dataTrims.innerHTML = '';
 
-                    itemClone.setAttribute('data-gtm-content-name', 'Slide ' + (index + 1) + ' - ' + item['name']);
+                    data.forEach((item, index) => {
+                        const itemClone = clone.cloneNode(true);
 
-                    itemClone.querySelector('[data-gtm-content-model]').setAttribute('data-gtm-content-model', item['name']);
+                        dataTrims.appendChild(itemClone);
 
-                    itemClone.querySelectorAll('[data-trim-text]').forEach(el => {
-                        const keys = el.getAttribute('data-trim-text').split('-');
-                        let value = item;
-                        keys.forEach(key => {
-                            value = value[key];
+                        itemClone.setAttribute('data-gtm-content-name', 'Slide ' + (index + 1) + ' - ' + item['name']);
+
+                        itemClone.querySelector('[data-gtm-content-model]').setAttribute('data-gtm-content-model', item['name']);
+
+                        itemClone.querySelectorAll('[data-trim-text]').forEach(el => {
+                            const keys = el.getAttribute('data-trim-text').split('-');
+                            let value = item;
+                            keys.forEach(key => {
+                                value = value[key];
+                            });
+
+                            el.innerHTML = value;
                         });
 
-                        el.innerHTML = value;
-                    });
-
-                    itemClone.querySelectorAll('[data-trim-image]').forEach(el => {
-                        const keys = el.getAttribute('data-trim-image').split('-');
+                        itemClone.querySelectorAll('[data-trim-image]').forEach(el => {
+                            const keys = el.getAttribute('data-trim-image').split('-');
                         let value = item;
                         keys.forEach(key => {
                             value = value[key];
@@ -363,8 +363,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
 
                 });
-
-            });
 
                 const totalEl = document.querySelector('[data-trim-total]');
                 if (totalEl) {
