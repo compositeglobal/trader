@@ -265,136 +265,142 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 dataTrimsElements.forEach(dataTrims => {
 
-                const clone = dataTrims.firstElementChild.cloneNode(true);
+                    const clone = dataTrims.firstElementChild.cloneNode(true);
 
-                data.forEach((item, index) => {
-                    const itemClone = clone.cloneNode(true);
+                    data.forEach((item, index) => {
+                        const itemClone = clone.cloneNode(true);
 
-                    dataTrims.appendChild(itemClone);
+                        dataTrims.appendChild(itemClone);
 
-                    itemClone.setAttribute('data-gtm-content-name', 'Slide ' + (index + 1) + ' - ' + item['name']);
+                        itemClone.setAttribute('data-gtm-content-name', 'Slide ' + (index + 1) + ' - ' + item['name']);
 
-                    itemClone.querySelector('[data-gtm-content-model]').setAttribute('data-gtm-content-model', item['name']);
-
-                    itemClone.querySelectorAll('[data-trim-text]').forEach(el => {
-                        const keys = el.getAttribute('data-trim-text').split('-');
-                        let value = item;
-                        keys.forEach(key => {
-                            value = value[key];
-                        });
-
-                        el.innerHTML = value;
-                    });
-
-                    itemClone.querySelectorAll('[data-trim-image]').forEach(el => {
-                        const keys = el.getAttribute('data-trim-image').split('-');
-                        let value = item;
-                        keys.forEach(key => {
-                            value = value[key];
-                        });
-
-                        if (value) {
-                            el.src = value;
+                        let gtmModel = itemClone.querySelector('[data-gtm-content-model]');
+                        if (gtmModel) {
+                            gtmModel.setAttribute('data-gtm-content-model', item['name']);
                         }
-                    });
 
-                    itemClone.querySelectorAll('[data-trim-count]').forEach(el => {
-                        const countType = el.getAttribute('data-trim-count');
-                        if (countType === 'current') {
-                            el.innerHTML = index + 1;
-                        } else if (countType === 'total') {
-                            el.innerHTML = data.length;
-                        }
-                    });
-
-                    const keySpecsEl = itemClone.querySelector('[data-trim-key-specifications]');
-                    if (keySpecsEl) {
-                        const keySpecClone = keySpecsEl.firstElementChild.cloneNode(true);
-
-                        keySpecsEl.innerHTML = '';
-
-                        item.keySpecifications.forEach(spec => {
-                            const newKeySpecClone = keySpecClone.cloneNode(true);
-                            newKeySpecClone.innerHTML = spec;
-                            keySpecsEl.appendChild(newKeySpecClone);
-                        });
-                    }
-
-                    const specsEl = itemClone.querySelector('[data-trims-specs]');
-                    if (specsEl) {
-                        const specClone = specsEl.children[1].cloneNode(true);
-                        specsEl.removeChild(specsEl.children[1]);
-                        Object.entries(item.categories).forEach(([key, value]) => {
-                            const newSpecClone = specClone.cloneNode(true);
-                            newSpecClone.querySelector('[data-trims-specs=title]').innerHTML = key;
-
-                            newSpecClone.querySelector('[mirror-click]').setAttribute('mirror-click', key);
-
-                            const listEl = newSpecClone.querySelector('[data-trims-spec=list]');
-                            const listItemClone = listEl.firstElementChild.cloneNode(true);
-
-                            listEl.innerHTML = '';
-                            Object.entries(value).forEach(([specKey, specValue]) => {
-                                const newListItemClone = listItemClone.cloneNode(true);
-
-                                if (specKey === 'DriverAssistance') {
-                                    newListItemClone.querySelector('[data-trims-spec=key]').innerHTML = 'Driver Assistance';
-                                } else {
-                                    newListItemClone.querySelector('[data-trims-spec=key]').innerHTML = specKey;
-                                }
-
-                                if (specValue.toLowerCase() === 'yes') {
-                                    newListItemClone.querySelector('[data-trims-spec=value]').innerHTML = 'Included';
-                                    newListItemClone.querySelector('[data-trims-spec=value]').className += ' trim_table_included';
-                                } else if (specValue.toLowerCase() === 'no') {
-                                    newListItemClone.querySelector('[data-trims-spec=value]').innerHTML = 'Not Available';
-                                    newListItemClone.querySelector('[data-trims-spec=value]').className += ' trim_table_not-available';
-                                } else {
-                                    newListItemClone.querySelector('[data-trims-spec=value]').innerHTML = specValue;
-                                }
-
-                                listEl.appendChild(newListItemClone);
+                        itemClone.querySelectorAll('[data-trim-text]').forEach(el => {
+                            const keys = el.getAttribute('data-trim-text').split('-');
+                            let value = item;
+                            keys.forEach(key => {
+                                value = value[key];
                             });
 
-                            specsEl.appendChild(newSpecClone);
+                            el.innerHTML = value;
                         });
-                    }
 
-                });
+                        itemClone.querySelectorAll('[data-trim-image]').forEach(el => {
+                            const keys = el.getAttribute('data-trim-image').split('-');
+                            let value = item;
+                            keys.forEach(key => {
+                                value = value[key];
+                            });
 
-                const totalEl = document.querySelector('[data-trim-total]');
-                if (totalEl) {
-                    totalEl.innerHTML = `${data.length} ${data.length === 1 ? 'trim' : 'trims'}`;
-                }
-                window.Webflow && window.Webflow.destroy();
-                window.Webflow && window.Webflow.ready();
-                window.Webflow && window.Webflow.require('ix2').init();
-                document.dispatchEvent(new Event('readystatechange'));
-
-                // Mirror Clicks
-
-                const mirrorElements = document.querySelectorAll('[mirror-click]');
-
-                mirrorElements.forEach(element => {
-                    element.addEventListener('click', function (event) {
-                        // Only proceed if this is a user-initiated event
-                        if (!event.isTrusted) {
-                            return;
-                        }
-
-                        const mirrorValue = this.getAttribute('mirror-click');
-
-                        const sameMirrorElements = document.querySelectorAll(`[mirror-click="${mirrorValue}"]`);
-
-                        sameMirrorElements.forEach(el => {
-                            if (el !== this) { // Avoid infinite loop by not clicking the element that was originally clicked
-                                el.click();
+                            if (value) {
+                                el.src = value;
                             }
                         });
-                    });
-                });
 
-            });
+                        let trimCount = itemClone.querySelectorAll('[data-trim-count]');
+                        if (trimCount.length > 0) {
+                            trimCount.forEach(el => {
+                                const countType = el.getAttribute('data-trim-count');
+                                if (countType === 'current') {
+                                    el.innerHTML = index + 1;
+                                } else if (countType === 'total') {
+                                    el.innerHTML = data.length;
+                                }
+                            });
+                        }
+
+                        const keySpecsEl = itemClone.querySelector('[data-trim-key-specifications]');
+                        if (keySpecsEl) {
+                            const keySpecClone = keySpecsEl.firstElementChild.cloneNode(true);
+
+                            keySpecsEl.innerHTML = '';
+
+                            item.keySpecifications.forEach(spec => {
+                                const newKeySpecClone = keySpecClone.cloneNode(true);
+                                newKeySpecClone.innerHTML = spec;
+                                keySpecsEl.appendChild(newKeySpecClone);
+                            });
+                        }
+
+                        const specsEl = itemClone.querySelector('[data-trims-specs]');
+                        if (specsEl) {
+                            const specClone = specsEl.children[1].cloneNode(true);
+                            specsEl.removeChild(specsEl.children[1]);
+                            Object.entries(item.categories).forEach(([key, value]) => {
+                                const newSpecClone = specClone.cloneNode(true);
+                                newSpecClone.querySelector('[data-trims-specs=title]').innerHTML = key;
+
+                                newSpecClone.querySelector('[mirror-click]').setAttribute('mirror-click', key);
+
+                                const listEl = newSpecClone.querySelector('[data-trims-spec=list]');
+                                const listItemClone = listEl.firstElementChild.cloneNode(true);
+
+                                listEl.innerHTML = '';
+                                Object.entries(value).forEach(([specKey, specValue]) => {
+                                    const newListItemClone = listItemClone.cloneNode(true);
+
+                                    if (specKey === 'DriverAssistance') {
+                                        newListItemClone.querySelector('[data-trims-spec=key]').innerHTML = 'Driver Assistance';
+                                    } else {
+                                        newListItemClone.querySelector('[data-trims-spec=key]').innerHTML = specKey;
+                                    }
+
+                                    if (specValue.toLowerCase() === 'yes') {
+                                        newListItemClone.querySelector('[data-trims-spec=value]').innerHTML = 'Included';
+                                        newListItemClone.querySelector('[data-trims-spec=value]').className += ' trim_table_included';
+                                    } else if (specValue.toLowerCase() === 'no') {
+                                        newListItemClone.querySelector('[data-trims-spec=value]').innerHTML = 'Not Available';
+                                        newListItemClone.querySelector('[data-trims-spec=value]').className += ' trim_table_not-available';
+                                    } else {
+                                        newListItemClone.querySelector('[data-trims-spec=value]').innerHTML = specValue;
+                                    }
+
+                                    listEl.appendChild(newListItemClone);
+                                });
+
+                                specsEl.appendChild(newSpecClone);
+                            });
+                        }
+
+                    });
+
+                    const totalEl = document.querySelector('[data-trim-total]');
+                    if (totalEl) {
+                        totalEl.innerHTML = `${data.length} ${data.length === 1 ? 'trim' : 'trims'}`;
+                    }
+                    window.Webflow && window.Webflow.destroy();
+                    window.Webflow && window.Webflow.ready();
+                    window.Webflow && window.Webflow.require('ix2').init();
+                    document.dispatchEvent(new Event('readystatechange'));
+
+                    // Mirror Clicks
+
+                    const mirrorElements = document.querySelectorAll('[mirror-click]');
+
+                    mirrorElements.forEach(element => {
+                        element.addEventListener('click', function (event) {
+                            // Only proceed if this is a user-initiated event
+                            if (!event.isTrusted) {
+                                return;
+                            }
+
+                            const mirrorValue = this.getAttribute('mirror-click');
+
+                            const sameMirrorElements = document.querySelectorAll(`[mirror-click="${mirrorValue}"]`);
+
+                            sameMirrorElements.forEach(el => {
+                                if (el !== this) { // Avoid infinite loop by not clicking the element that was originally clicked
+                                    el.click();
+                                }
+                            });
+                        });
+                    });
+
+                });
             });
     }
 });
