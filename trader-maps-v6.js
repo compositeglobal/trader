@@ -280,6 +280,22 @@ function initMap() {
 
                     let timeoutId = null;
 
+                    // Add a click event listener to the marker
+marker.addListener('click', () => {
+    // Open the InfoWindow when the marker is clicked
+    infoWindow.open(map, marker);
+    marker.setIcon('https://uploads-ssl.webflow.com/64c57def3601adf69171da07/65e894396b30c86b21522c13_active.svg');
+    li.classList.add('hover');
+});
+
+// Add a click event listener to the map
+google.maps.event.addListener(map, 'click', () => {
+    // Close the InfoWindow when the map is clicked
+    infoWindow.close();
+    marker.setIcon('https://uploads-ssl.webflow.com/64c57def3601adf69171da07/65e894381acc2469159cdc1c_dormant.svg');
+    li.classList.remove('hover');
+});
+
                     // Show the InfoWindow and change the icon when the marker is hovered
                     marker.addListener('mouseover', () => {
                         clearTimeout(timeoutId); // Clear the timeout if it's set
@@ -319,15 +335,15 @@ function initMap() {
                             li.setAttribute('data-gtm-content-model', location['name']);
 
                             if (element.hasAttribute('data-map') && element.getAttribute('data-map') === 'phoneNumber') {
-                                
-let phoneNumber = location[key];
-if (phoneNumber) {
 
-phoneNumber = phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+                                let phoneNumber = location[key];
+                                if (phoneNumber) {
 
-element.innerHTML = phoneNumber;
-element.href = `tel:${location[key]}`;
-}
+                                    phoneNumber = phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+
+                                    element.innerHTML = phoneNumber;
+                                    element.href = `tel:${location[key]}`;
+                                }
 
                             } else if (element.hasAttribute('data-map')) {
                                 element.innerHTML = location[key];
@@ -335,8 +351,8 @@ element.href = `tel:${location[key]}`;
                                 if (location[key] && location[key].trim() !== '') {
                                     element.src = location[key];
                                     element.srcset = location[key];
-                                }  
-                                                      } else if (element.hasAttribute('data-map-distance')) {
+                                }
+                            } else if (element.hasAttribute('data-map-distance')) {
                                 element.textContent = `${location[key].toFixed(2)} km`;
                             }
                         }
@@ -404,7 +420,7 @@ element.href = `tel:${location[key]}`;
                         let selectedMode = event.target.id;
 
                         console.log(destinationLocation)
-                        
+
                         if (destinationLocation) {
                             calculateAndDisplayRoute(directionsService, directionsRenderer, userLocation, destinationLocation, google.maps.TravelMode[selectedMode]);
                         }
@@ -415,7 +431,7 @@ element.href = `tel:${location[key]}`;
 
                     directionsRenderer.setDirections(null);
 
-    });
+                });
 
 
             })
