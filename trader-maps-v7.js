@@ -280,40 +280,62 @@ function initMap() {
 
                     let timeoutId = null;
 
-                    // Add a click event listener to the marker
+// Variable to hold the currently open InfoWindow
+let currentInfoWindow = null;
+
+// Add a click event listener to the marker
 marker.addListener('click', () => {
-    // Open the InfoWindow when the marker is clicked
+    // Close the currently open InfoWindow
+    if (currentInfoWindow) {
+        currentInfoWindow.close();
+        currentInfoWindow.getMarker().setIcon('https://uploads-ssl.webflow.com/64c57def3601adf69171da07/65e894381acc2469159cdc1c_dormant.svg');
+        currentInfoWindow.getLi().classList.remove('hover');
+    }
+
+    // Open the new InfoWindow and update the currentInfoWindow variable
     infoWindow.open(map, marker);
     marker.setIcon('https://uploads-ssl.webflow.com/64c57def3601adf69171da07/65e894396b30c86b21522c13_active.svg');
     li.classList.add('hover');
+    currentInfoWindow = infoWindow;
 });
 
 // Add a click event listener to the map
 google.maps.event.addListener(map, 'click', () => {
-    // Close the InfoWindow when the map is clicked
-    infoWindow.close();
-    marker.setIcon('https://uploads-ssl.webflow.com/64c57def3601adf69171da07/65e894381acc2469159cdc1c_dormant.svg');
-    li.classList.remove('hover');
+    // Close the currently open InfoWindow
+    if (currentInfoWindow) {
+        currentInfoWindow.close();
+        currentInfoWindow.getMarker().setIcon('https://uploads-ssl.webflow.com/64c57def3601adf69171da07/65e894381acc2469159cdc1c_dormant.svg');
+        currentInfoWindow.getLi().classList.remove('hover');
+        currentInfoWindow = null;
+    }
 });
 
-                    // Show the InfoWindow and change the icon when the marker is hovered
-                    marker.addListener('mouseover', () => {
-                        clearTimeout(timeoutId); // Clear the timeout if it's set
-                        infoWindow.open(map, marker);
-                        marker.setIcon('https://uploads-ssl.webflow.com/64c57def3601adf69171da07/65e894396b30c86b21522c13_active.svg'); // Set the icon to a hover image
-                        li.classList.add('hover');
-                    });
+// Existing mouseover and mouseout event listeners
+marker.addListener('mouseover', () => {
+    clearTimeout(timeoutId); // Clear the timeout if it's set
 
-                    // Hide the InfoWindow and change the icon back when the mouse leaves the marker
-                    marker.addListener('mouseout', () => {
-                        // Set a timeout to close the InfoWindow after 1 second
-                        timeoutId = setTimeout(() => {
-                            infoWindow.close();
-                            marker.setIcon('https://uploads-ssl.webflow.com/64c57def3601adf69171da07/65e894381acc2469159cdc1c_dormant.svg'); // Set the icon back to the default image
-                            li.classList.remove('hover');
-                        }, 1000); // 1000 milliseconds = 1 second
-                    });
+    // Close the currently open InfoWindow
+    if (currentInfoWindow) {
+        currentInfoWindow.close();
+        currentInfoWindow.getMarker().setIcon('https://uploads-ssl.webflow.com/64c57def3601adf69171da07/65e894381acc2469159cdc1c_dormant.svg');
+        currentInfoWindow.getLi().classList.remove('hover');
+    }
 
+    // Open the new InfoWindow and update the currentInfoWindow variable
+    infoWindow.open(map, marker);
+    marker.setIcon('https://uploads-ssl.webflow.com/64c57def3601adf69171da07/65e894396b30c86b21522c13_active.svg');
+    li.classList.add('hover');
+    currentInfoWindow = infoWindow;
+});
+
+marker.addListener('mouseout', () => {
+    // Set a timeout to close the InfoWindow after 1 second
+    timeoutId = setTimeout(() => {
+        infoWindow.close();
+        marker.setIcon('https://uploads-ssl.webflow.com/64c57def3601adf69171da07/65e894381acc2469159cdc1c_dormant.svg');
+        li.classList.remove('hover');
+    }, 1000);
+});
                     // Clone the template and populate it with data
 
 
