@@ -164,7 +164,7 @@ function initMap() {
         const manufacturer = metaTag && metaTag.getAttribute('content');
 
         // Construct the URL
-        const url = `https://apimqa.autotrader.ca/research/v1/dealer-search?oemName=` + manufacturer;
+        const url = `https://apimktprd01.autotrader.ca/research/v1/dealer-search?oemName=` + manufacturer;
         // Fetch the data
         fetch(url)
             .then(response => response.json())
