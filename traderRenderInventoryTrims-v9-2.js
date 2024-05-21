@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const manufacturerMeta = document.querySelector('meta[name="manufacturer"]');
         const modelMeta = document.querySelector('meta[name="model"]');
         const modelMinYear = document.querySelector('meta[name="modelYear"]');
-        let url = 'https://apimqa.autotrader.ca/research/v1/vehicle-inventory?make=';
+        let url = 'https://apimktprd01.autotrader.ca/research/v1/vehicle-inventory?make=';
 
         if (manufacturerMeta) {
             url += manufacturerMeta.getAttribute('content');
