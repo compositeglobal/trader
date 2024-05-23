@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="360Camera" xml:space="preserve">
+    <value>360 Camera</value>
+  </data>
+  <data name="AdaptiveCruiseControl" xml:space="preserve">
+    <value>Adaptive Cruise Control</value>
+  </data>
+  <data name="AddVehicle" xml:space="preserve">
+    <value>Add Vehicle</value>
+  </data>
+  <data name="AirConditioning" xml:space="preserve">
+    <value>Air Conditioning</value>
+  </data>
+  <data name="AllFeatures" xml:space="preserve">
+    <value>All Features</value>
+  </data>
+  <data name="AM/FMStereo" xml:space="preserve">
+    <value>AM/FM Stereo</value>
+  </data>
+  <data name="AndroidAuto" xml:space="preserve">
+    <value>Android Auto</value>
+  </data>
+  <data name="AppleCarPlay" xml:space="preserve">
+    <value>Apple CarPlay</value>
+  </data>
+  <data name="Auto-DimmingRearviewMirror" xml:space="preserve">
+    <value>Auto-Dimming Rearview Mirror</value>
+  </data>
+  <data name="AutomaticHeadlights" xml:space="preserve">
+    <value>Automatic Headlights</value>
+  </data>
+  <data name="AutomaticParking" xml:space="preserve">
+    <value>Automatic Parking</value>
+  </data>
+  <data name="autoTraderReview" xml:space="preserve">
+    <value>AutoTrader Review</value>
+  </data>
+  <data name="AuxiliaryAudioInput" xml:space="preserve">
+    <value>Auxiliary Audio Input</value>
+  </data>
+  <data name="Back-UpCamera" xml:space="preserve">
+    <value>Back-Up Camera</value>
+  </data>
+  <data name="BaseCurbWeight" xml:space="preserve">
+    <value>Base Curb Weight </value>
+  </data>
+  <data name="BasedOn" xml:space="preserve">
+    <value>Based on</value>
+  </data>
+  <data name="BatteryRange" xml:space="preserve">
+    <value>Battery Range</value>
+  </data>
+  <data name="BedLiner" xml:space="preserve">
+    <value>Bed Liner</value>
+  </data>
+  <data name="BlindSpotMonitor" xml:space="preserve">
+    <value>Blind Spot Monitor</value>
+  </data>
+  <data name="BluetoothConnection" xml:space="preserve">
+    <value>Bluetooth Connection</value>
+  </data>
+  <data name="Brake" xml:space="preserve">
+    <value>Brake</value>
+  </data>
+  <data name="BrakeABSSystem" xml:space="preserve">
+    <value>Brake ABS System</value>
+  </data>
+  <data name="BrakeAssist" xml:space="preserve">
+    <value>Brake Assist</value>
+  </data>
+  <data name="BuyersGuide" xml:space="preserve">
+    <value>Buyer’s Guide</value>
+  </data>
+  <data name="CanadianMSRP" xml:space="preserve">
+    <value>Canadian MSRP</value>
+  </data>
+  <data name="MSRP" xml:space="preserve">
+    <value>MSRP</value>
+  </data>
+  <data name="Canopy" xml:space="preserve">
+    <value>Canopy</value>
+  </data>
+  <data name="CarComparison" xml:space="preserve">
+    <value>Car Comparison</value>
+  </data>
+  <data name="CargoVolume" xml:space="preserve">
+    <value>Cargo Volume </value>
+  </data>
+  <data name="CargoVolumetoFirstRow" xml:space="preserve">
+    <value>Cargo Volume to First Row </value>
+  </data>
+  <data name="CargoVolumetoSecondRow" xml:space="preserve">
+    <value>Cargo Volume to Second Row </value>
+  </data>
+  <data name="CargoVolumetoThirdRow" xml:space="preserve">
+    <value>Cargo Volume to Third Row </value>
+  </data>
+  <data name="CDPlayer" xml:space="preserve">
+    <value>CD Player</value>
+  </data>
+  <data name="ChangeVehicle" xml:space="preserve">
+    <value>Change Vehicle</value>
+  </data>
+  <data name="ChildSafetyLocks" xml:space="preserve">
+    <value>Child Safety Locks</value>
+  </data>
+  <data name="ClimateControl" xml:space="preserve">
+    <value>Climate Control</value>
+  </data>
+  <data name="Comfort" xml:space="preserve">
+    <value>Comfort</value>
+  </data>
+  <data name="CompareBtn" xml:space="preserve">
+    <value>Compare</value>
+  </data>
+  <data name="CompareCars" xml:space="preserve">
+    <value>Compare Cars Side by Side</value>
+  </data>
+  <data name="CompareTrims" xml:space="preserve">
+    <value>Compare Trims</value>
+  </data>
+  <data name="CompareVehicleText" xml:space="preserve">
+    <value>Want to see which vehicle is better? Use our Vehicle Comparison Tool and see their price, specs and features side by side.</value>
+  </data>
+  <data name="Comparison" xml:space="preserve">
+    <value>Comparison</value>
+  </data>
+  <data name="ComparisonText" xml:space="preserve">
+    <value>Compare prices, trims, specs, options, features and scores of up to five cars, trucks or SUVs that are available in Canada with our free side-by-side car comparison tool.</value>
+  </data>
+  <data name="Connectivity" xml:space="preserve">
+    <value>Connectivity</value>
+  </data>
+  <data name="Convenience" xml:space="preserve">
+    <value>Convenience</value>
+  </data>
+  <data name="CooledFrontSeat(s)" xml:space="preserve">
+    <value>Cooled Front Seat(s)</value>
+  </data>
+  <data name="CooledRearSeat(s)" xml:space="preserve">
+    <value>Cooled Rear Seat(s)</value>
+  </data>
+  <data name="Cross-TrafficAlert" xml:space="preserve">
+    <value>Cross-Traffic Alert</value>
+  </data>
+  <data name="CruiseControl" xml:space="preserve">
+    <value>Cruise Control</value>
+  </data>
+  <data name="DataProvidedBy" xml:space="preserve">
+    <value>Data provided by</value>
+  </data>
+  <data name="DaytimeRunningLights" xml:space="preserve">
+    <value>Daytime Running Lights</value>
+  </data>
+  <data name="DeadWeightTongue" xml:space="preserve">
+    <value>Dead Weight Hitch - Max Tongue Wt.</value>
+  </data>
+  <data name="DeadWeightTrailer" xml:space="preserve">
+    <value>Dead Weight Hitch - Max Trailer Wt.</value>
+  </data>
+  <data name="Differences" xml:space="preserve">
+    <value>Differences</value>
+  </data>
+  <data name="Displacement" xml:space="preserve">
+    <value>Displacement</value>
+  </data>
+  <data name="Driver Assistance" xml:space="preserve">
+    <value>Driver Assistance</value>
+  </data>
+  <data name="DriverAssistance" xml:space="preserve">
+    <value>Driver Assistance</value>
+  </data>
+  <data name="DriverAdjustableLumbar" xml:space="preserve">
+    <value>Driver Adjustable Lumbar</value>
+  </data>
+  <data name="DriverAirBag" xml:space="preserve">
+    <value>Driver Air Bag</value>
+  </data>
+  <data name="DriverRestrictionFeatures" xml:space="preserve">
+    <value>Driver Restriction Features</value>
+  </data>
+  <data name="Drivetrain" xml:space="preserve">
+    <value>Drivetrain</value>
+  </data>
+  <data name="EmergencyTrunkRelease" xml:space="preserve">
+    <value>Emergency Trunk Release</value>
+  </data>
+  <data name="Engine" xml:space="preserve">
+    <value>Engine</value>
+  </data>
+  <data name="EngineImmobilizer" xml:space="preserve">
+    <value>Engine Immobilizer</value>
+  </data>
+  <data name="Explore" xml:space="preserve">
+    <value>Explore</value>
+  </data>
+  <data name="Exterior" xml:space="preserve">
+    <value>Exterior</value>
+  </data>
+  <data name="ExteriorStyling" xml:space="preserve">
+    <value>Exterior Styling</value>
+  </data>
+  <data name="FifthWheelTongue" xml:space="preserve">
+    <value>Fifth Wheel Hitch - Max Tongue Wt.</value>
+  </data>
+  <data name="FifthWheelTrailer" xml:space="preserve">
+    <value>Fifth Wheel Hitch - Max Trailer Wt.</value>
+  </data>
+  <data name="ForSale" xml:space="preserve">
+    <value>for Sale</value>
+  </data>
+  <data name="FrontHeadAirbag" xml:space="preserve">
+    <value>Front Head Air Bag</value>
+  </data>
+  <data name="FrontHeadRoom" xml:space="preserve">
+    <value>Front Head Room </value>
+  </data>
+  <data name="FrontLegRoom" xml:space="preserve">
+    <value>Front Leg Room </value>
+  </data>
+  <data name="FrontReadingLamps" xml:space="preserve">
+    <value>Front Reading Lamps</value>
+  </data>
+  <data name="FrontShoulderRoom" xml:space="preserve">
+    <value>Front Shoulder Room </value>
+  </data>
+  <data name="FrontSideAirBag" xml:space="preserve">
+    <value>Front Side Air Bag</value>
+  </data>
+  <data name="FrontTireSize" xml:space="preserve">
+    <value>Front Tire Size</value>
+  </data>
+  <data name="Fuel" xml:space="preserve">
+    <value>Fuel</value>
+  </data>
+  <data name="FuelCapacity" xml:space="preserve">
+    <value>Fuel Capacity</value>
+  </data>
+  <data name="FuelConsumption:City" xml:space="preserve">
+    <value>Fuel Consumption: City</value>
+  </data>
+  <data name="FuelConsumption:City/HWYCombined" xml:space="preserve">
+    <value>Fuel Consumption: City/HWY Combined</value>
+  </data>
+  <data name="FuelConsumption:Equivalent-City" xml:space="preserve">
+    <value>Fuel Consumption: Equivalent - City</value>
+  </data>
+  <data name="FuelConsumption:Equivalent-City/HWYCombined" xml:space="preserve">
+    <value>Fuel Consumption: Equivalent - City/HWY Combined</value>
+  </data>
+  <data name="FuelConsumption:Equivalent-Highway" xml:space="preserve">
+    <value>Fuel Consumption: Equivalent - Highway</value>
+  </data>
+  <data name="FuelConsumption:Highway" xml:space="preserve">
+    <value>Fuel Consumption: Highway</value>
+  </data>
+  <data name="FuelEconomy" xml:space="preserve">
+    <value>Fuel Economy</value>
+  </data>
+  <data name="FuelSystem" xml:space="preserve">
+    <value>Fuel System</value>
+  </data>
+  <data name="Hands-FreeLiftgate" xml:space="preserve">
+    <value>Hands-Free Liftgate</value>
+  </data>
+  <data name="HardDiskDriveMediaStorage" xml:space="preserve">
+    <value>Hard Disk Drive Media Storage</value>
+  </data>
+  <data name="HDRadio" xml:space="preserve">
+    <value>HD Radio</value>
+  </data>
+  <data name="Headlights-Auto-Leveling" xml:space="preserve">
+    <value>Headlights-Auto-Leveling</value>
+  </data>
+  <data name="Heads-UpDisplay" xml:space="preserve">
+    <value>Heads-Up Display</value>
+  </data>
+  <data name="HeadtoHeadComparisons" xml:space="preserve">
+    <value>Head to Head Comparisons</value>
+  </data>
+  <data name="HeatedFrontSeat(s)" xml:space="preserve">
+    <value>Heated Front Seat(s)</value>
+  </data>
+  <data name="HeatedMirrors" xml:space="preserve">
+    <value>Heated Mirrors</value>
+  </data>
+  <data name="HeatedRearSeat(s)" xml:space="preserve">
+    <value>Heated Rear Seat(s)</value>
+  </data>
+  <data name="HeatedSteeringWheel" xml:space="preserve">
+    <value>Heated Steering Wheel</value>
+  </data>
+  <data name="Height,Overall" xml:space="preserve">
+    <value>Height, Overall </value>
+  </data>
+  <data name="HIDheadlights" xml:space="preserve">
+    <value>HID headlights</value>
+  </data>
+  <data name="Horsepower" xml:space="preserve">
+    <value>Horsepower</value>
+  </data>
+  <data name="Infotainment" xml:space="preserve">
+    <value>Infotainment</value>
+  </data>
+  <data name="IntegratedTurnSignalMirrors" xml:space="preserve">
+    <value>Integrated Turn Signal Mirrors</value>
+  </data>
+  <data name="Interior" xml:space="preserve">
+    <value>Interior</value>
+  </data>
+  <data name="InteriorDesign" xml:space="preserve">
+    <value>Interior Design</value>
+  </data>
+  <data name="Inventory" xml:space="preserve">
+    <value>Inventory</value>
+  </data>
+  <data name="KeylessEntry" xml:space="preserve">
+    <value>Keyless Entry</value>
+  </data>
+  <data name="KeylessStart" xml:space="preserve">
+    <value>Keyless Start</value>
+  </data>
+  <data name="KeySpecs" xml:space="preserve">
+    <value>Key Specifications for</value>
+  </data>
+  <data name="KneeAirBag" xml:space="preserve">
+    <value>Knee Air Bag</value>
+  </data>
+  <data name="LaneDepartureWarning" xml:space="preserve">
+    <value>Lane Departure Warning</value>
+  </data>
+  <data name="LaneKeepingAssist" xml:space="preserve">
+    <value>Lane Keeping Assist</value>
+  </data>
+  <data name="LatestAutomotiveArticles" xml:space="preserve">
+    <value>Latest Automotive Articles</value>
+  </data>
+  <data name="LatestConvertibles" xml:space="preserve">
+    <value>Latest Convertibles</value>
+  </data>
+  <data name="LatestCoupes" xml:space="preserve">
+    <value>Latest Coupes</value>
+  </data>
+  <data name="LatestHatchbacks" xml:space="preserve">
+    <value>Latest Hatchbacks</value>
+  </data>
+  <data name="LatestMinivans" xml:space="preserve">
+    <value>Latest Minivans</value>
+  </data>
+  <data name="LatestSedans" xml:space="preserve">
+    <value>Latest Sedans</value>
+  </data>
+  <data name="LatestSUVs" xml:space="preserve">
+    <value>Latest SUVs</value>
+  </data>
+  <data name="LatestTrucks" xml:space="preserve">
+    <value>Latest Trucks</value>
+  </data>
+  <data name="LatestUpcomingVehicles" xml:space="preserve">
+    <value>Latest and Upcoming Vehicles</value>
+  </data>
+  <data name="LatestVehicles" xml:space="preserve">
+    <value>Latest Vehicles</value>
+  </data>
+  <data name="LatestWagons" xml:space="preserve">
+    <value>Latest Wagons</value>
+  </data>
+  <data name="Length,Overall" xml:space="preserve">
+    <value>Length, Overall </value>
+  </data>
+  <data name="LessMakes" xml:space="preserve">
+    <value>Less Makes</value>
+  </data>
+  <data name="Lighting" xml:space="preserve">
+    <value>Lighting</value>
+  </data>
+  <data name="LuggageRack" xml:space="preserve">
+    <value>Luggage Rack</value>
+  </data>
+  <data name="Make" xml:space="preserve">
+    <value>Make</value>
+  </data>
+  <data name="ManufacturerRecallNumber" xml:space="preserve">
+    <value>Manufacturer Recall Number</value>
+  </data>
+  <data name="MaxTrailCapacity" xml:space="preserve">
+    <value>Maximum Trailering Capacity</value>
+  </data>
+  <data name="Mechanical" xml:space="preserve">
+    <value>Mechanical</value>
+  </data>
+  <data name="MinGroundClearance" xml:space="preserve">
+    <value>Min Ground Clearance </value>
+  </data>
+  <data name="MirrorMemory" xml:space="preserve">
+    <value>Mirror Memory</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="ModelAffected" xml:space="preserve">
+    <value>Model year(s) affected</value>
+  </data>
+  <data name="ModelOverview" xml:space="preserve">
+    <value>Model Overview</value>
+  </data>
+  <data name="Models" xml:space="preserve">
+    <value>Models</value>
+  </data>
+  <data name="MoreMakes" xml:space="preserve">
+    <value>More Makes</value>
+  </data>
+  <data name="MostPopularComparisons" xml:space="preserve">
+    <value>Most Popular Comparisons</value>
+  </data>
+  <data name="MP3Player" xml:space="preserve">
+    <value>MP3 Player</value>
+  </data>
+  <data name="Multi-ZoneAirConditioning" xml:space="preserve">
+    <value>Multi-Zone Air Conditioning</value>
+  </data>
+  <data name="N/A" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="NavigationSystem" xml:space="preserve">
+    <value>Navigation System</value>
+  </data>
+  <data name="NewsReviews" xml:space="preserve">
+    <value>News and Reviews</value>
+  </data>
+  <data name="FAQHubPages" xml:space="preserve">
+    <value>Frequently Asked Questions About the</value>
+  </data>
+  <data name="NightVision" xml:space="preserve">
+    <value>Night Vision</value>
+  </data>
+  <data name="NoContentAvailable" xml:space="preserve">
+    <value>No content available</value>
+  </data>
+  <data name="NoDealsAvailable" xml:space="preserve">
+    <value>No deals currently available for this location.</value>
+  </data>
+  <data name="NoRecallRecord" xml:space="preserve">
+    <value>There is no record of recalls for the</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>Not Available</value>
+  </data>
+  <data name="NotificationType" xml:space="preserve">
+    <value>Notification Type</value>
+  </data>
+  <data name="Optional" xml:space="preserve">
+    <value>Optional</value>
+  </data>
+  <data name="OverallScore" xml:space="preserve">
+    <value>Overall Score</value>
+  </data>
+  <data name="OwnerReviews" xml:space="preserve">
+    <value>Owner Reviews</value>
+  </data>
+  <data name="OwnerScores" xml:space="preserve">
+    <value>Owner Scores</value>
+  </data>
+  <data name="PassengerAdjustableLumbar" xml:space="preserve">
+    <value>Passenger Adjustable Lumbar</value>
+  </data>
+  <data name="PassengerAirBag" xml:space="preserve">
+    <value>Passenger Air Bag</value>
+  </data>
+  <data name="PassengerCapacity" xml:space="preserve">
+    <value>Passenger Capacity</value>
+  </data>
+  <data name="PickupBedTonneauCover" xml:space="preserve">
+    <value>Pickup Bed Tonneau Cover</value>
+  </data>
+  <data name="PowerDoorLocks" xml:space="preserve">
+    <value>Power Door Locks</value>
+  </data>
+  <data name="PowerDriverSeat" xml:space="preserve">
+    <value>Power Driver Seat</value>
+  </data>
+  <data name="PowerFoldingMirrors" xml:space="preserve">
+    <value>Power Folding Mirrors</value>
+  </data>
+  <data name="PowerLiftgate" xml:space="preserve">
+    <value>Power Liftgate</value>
+  </data>
+  <data name="PowerMirror(s)" xml:space="preserve">
+    <value>Power Mirror(s)</value>
+  </data>
+  <data name="PowerOutlet" xml:space="preserve">
+    <value>Power Outlet</value>
+  </data>
+  <data name="PowerPassengerSeat" xml:space="preserve">
+    <value>Power Passenger Seat</value>
+  </data>
+  <data name="PowerRetractableRunningBoards" xml:space="preserve">
+    <value>Power Retractable Running Boards</value>
+  </data>
+  <data name="PowerWindows" xml:space="preserve">
+    <value>Power Windows</value>
+  </data>
+  <data name="PvCars" xml:space="preserve">
+    <value>Cars</value>
+  </data>
+  <data name="PvCompareVehicles" xml:space="preserve">
+    <value>Compare Vehicles</value>
+  </data>
+  <data name="PvConvertibles" xml:space="preserve">
+    <value>Convertibles</value>
+  </data>
+  <data name="PvCoupes" xml:space="preserve">
+    <value>Coupes</value>
+  </data>
+  <data name="PvHatchbacks" xml:space="preserve">
+    <value>Hatchbacks</value>
+  </data>
+  <data name="PvHomeHeaderText" xml:space="preserve">
+    <value>Already have a model in mind? Dive in and see information on trims, prices, specs, options and more!</value>
+  </data>
+  <data name="PvHomeText" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="PvLuxurySedans" xml:space="preserve">
+    <value>Luxury Sedans</value>
+  </data>
+  <data name="PvLuxurySUVs" xml:space="preserve">
+    <value>Luxury SUVs</value>
+  </data>
+  <data name="PvMinivans" xml:space="preserve">
+    <value>Minivans</value>
+  </data>
+  <data name="PvSedans" xml:space="preserve">
+    <value>Sedans</value>
+  </data>
+  <data name="PvSUVs" xml:space="preserve">
+    <value>SUVs</value>
+  </data>
+  <data name="PvTrucks" xml:space="preserve">
+    <value>Trucks</value>
+  </data>
+  <data name="PvWagons" xml:space="preserve">
+    <value>Wagons</value>
+  </data>
+  <data name="RainSensingWipers" xml:space="preserve">
+    <value>Rain Sensing Wipers</value>
+  </data>
+  <data name="Readless" xml:space="preserve">
+    <value>Read less</value>
+  </data>
+  <data name="Readmore" xml:space="preserve">
+    <value>Read more</value>
+  </data>
+  <data name="RearAirConditioning" xml:space="preserve">
+    <value>Rear Air Conditioning</value>
+  </data>
+  <data name="RearHeadAirBag" xml:space="preserve">
+    <value>Rear Head Air Bag</value>
+  </data>
+  <data name="RearHeadRoom" xml:space="preserve">
+    <value>Rear Head Room </value>
+  </data>
+  <data name="RearLegRoom" xml:space="preserve">
+    <value>Rear Leg Room </value>
+  </data>
+  <data name="RearParkingAid" xml:space="preserve">
+    <value>Rear Parking Aid</value>
+  </data>
+  <data name="RearReadingLamps" xml:space="preserve">
+    <value>Rear Reading Lamps</value>
+  </data>
+  <data name="RearSeatAudioControls" xml:space="preserve">
+    <value>Rear Seat Audio Controls</value>
+  </data>
+  <data name="RearShoulderRoom" xml:space="preserve">
+    <value>Rear Shoulder Room </value>
+  </data>
+  <data name="RearSideAirBag" xml:space="preserve">
+    <value>Rear Side Air Bag</value>
+  </data>
+  <data name="RearTireSize" xml:space="preserve">
+    <value>Rear Tire Size</value>
+  </data>
+  <data name="RecallDate" xml:space="preserve">
+    <value>Recall date</value>
+  </data>
+  <data name="RecallInfo" xml:space="preserve">
+    <value>Recall Information</value>
+  </data>
+  <data name="RecallNumber" xml:space="preserve">
+    <value>Recall number</value>
+  </data>
+  <data name="Reliability" xml:space="preserve">
+    <value>Reliability</value>
+  </data>
+  <data name="RemoteEngineStart" xml:space="preserve">
+    <value>Remote Engine Start</value>
+  </data>
+  <data name="RemoteTrunkRelease" xml:space="preserve">
+    <value>Remote Trunk Release</value>
+  </data>
+  <data name="ResearchBtn" xml:space="preserve">
+    <value>Research</value>
+  </data>
+  <data name="ResearchByMake" xml:space="preserve">
+    <value>Research By Make</value>
+  </data>
+  <data name="Reviews" xml:space="preserve">
+    <value>reviews</value>
+  </data>
+  <data name="Reviews&amp;News" xml:space="preserve">
+    <value>Reviews &amp; News</value>
+  </data>
+  <data name="RolloverProtectionBars" xml:space="preserve">
+    <value>Rollover Protection Bars</value>
+  </data>
+  <data name="Roof" xml:space="preserve">
+    <value>Roof</value>
+  </data>
+  <data name="RunningBoards/SideSteps" xml:space="preserve">
+    <value>Running Boards/Side Steps</value>
+  </data>
+  <data name="Safety" xml:space="preserve">
+    <value>Safety</value>
+  </data>
+  <data name="SatelliteRadio" xml:space="preserve">
+    <value>Satellite Radio</value>
+  </data>
+  <data name="SearchNow" xml:space="preserve">
+    <value>Search now</value>
+  </data>
+  <data name="Seat-Massage" xml:space="preserve">
+    <value>Seat-Massage</value>
+  </data>
+  <data name="SeatbeltAirBag" xml:space="preserve">
+    <value>Seatbelt Air Bag</value>
+  </data>
+  <data name="SeatMemory" xml:space="preserve">
+    <value>Seat Memory</value>
+  </data>
+  <data name="Seats" xml:space="preserve">
+    <value>Seats</value>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>Security</value>
+  </data>
+  <data name="SecuritySystem" xml:space="preserve">
+    <value>Security System</value>
+  </data>
+  <data name="SelectAnotherVehicle" xml:space="preserve">
+    <value>Select Another Vehicle</value>
+  </data>
+  <data name="SelectVehicle" xml:space="preserve">
+    <value>Select A Vehicle</value>
+  </data>
+  <data name="SimilarVehicles" xml:space="preserve">
+    <value>Similar Vehicles</value>
+  </data>
+  <data name="SmartDeviceIntegration" xml:space="preserve">
+    <value>Smart Device Integration</value>
+  </data>
+  <data name="StabilityControl" xml:space="preserve">
+    <value>Stability Control</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="Steering" xml:space="preserve">
+    <value>Steering</value>
+  </data>
+  <data name="SteeringWheel-AudioControls" xml:space="preserve">
+    <value>Steering Wheel-Audio Controls</value>
+  </data>
+  <data name="StepsidePickupBox" xml:space="preserve">
+    <value>Stepside Pickup Box</value>
+  </data>
+  <data name="Sun/MoonRoof" xml:space="preserve">
+    <value>Sun/Moon Roof</value>
+  </data>
+  <data name="SystemAffected" xml:space="preserve">
+    <value>System affected</value>
+  </data>
+  <data name="ThirdRowHeadRoom" xml:space="preserve">
+    <value>Third Row Head Room </value>
+  </data>
+  <data name="ThirdRowLegRoom" xml:space="preserve">
+    <value>Third Row Leg Room </value>
+  </data>
+  <data name="ThirdRowShoulderRoom" xml:space="preserve">
+    <value>Third Row Shoulder Room </value>
+  </data>
+  <data name="TirePressureMonitor" xml:space="preserve">
+    <value>Tire Pressure Monitor</value>
+  </data>
+  <data name="Torque" xml:space="preserve">
+    <value>Torque</value>
+  </data>
+  <data name="TractionControl" xml:space="preserve">
+    <value>Traction Control</value>
+  </data>
+  <data name="TraderScores" xml:space="preserve">
+    <value>Trader Scores</value>
+  </data>
+  <data name="Transmission" xml:space="preserve">
+    <value>Transmission</value>
+  </data>
+  <data name="TransportCanada" xml:space="preserve">
+    <value>Transport Canada</value>
+  </data>
+  <data name="TrimComparison" xml:space="preserve">
+    <value>Trim Comparison</value>
+  </data>
+  <data name="TrimOptional" xml:space="preserve">
+    <value>Trim (Optional)</value>
+  </data>
+  <data name="TrunkVolume" xml:space="preserve">
+    <value>Trunk Volume </value>
+  </data>
+  <data name="UnitsAffected" xml:space="preserve">
+    <value>Units Affected</value>
+  </data>
+  <data name="UniversalGarageDoorOpener" xml:space="preserve">
+    <value>Universal Garage Door Opener</value>
+  </data>
+  <data name="Upcoming" xml:space="preserve">
+    <value>Upcoming</value>
+  </data>
+  <data name="VariableSpeedIntermittentWipers" xml:space="preserve">
+    <value>Variable Speed Intermittent Wipers</value>
+  </data>
+  <data name="VehicleInfo" xml:space="preserve">
+    <value>Vehicle Information</value>
+  </data>
+  <data name="VehicleNotReviewed" xml:space="preserve">
+    <value>This vehicle has not yet been reviewed</value>
+  </data>
+  <data name="VehicleResearch" xml:space="preserve">
+    <value>Vehicle Research</value>
+  </data>
+  <data name="ViewAll" xml:space="preserve">
+    <value>View all</value>
+  </data>
+  <data name="ViewAllArticles" xml:space="preserve">
+    <value>View All Articles</value>
+  </data>
+  <data name="ViewAllORs" xml:space="preserve">
+    <value>View all owner reviews</value>
+  </data>
+  <data name="ViewDeals" xml:space="preserve">
+    <value>View Deals</value>
+  </data>
+  <data name="ViewDetails" xml:space="preserve">
+    <value>View details</value>
+  </data>
+  <data name="ViewInventory" xml:space="preserve">
+    <value>View Inventory</value>
+  </data>
+  <data name="ViewIssue" xml:space="preserve">
+    <value>View Issue</value>
+  </data>
+  <data name="ViewLessRecalls" xml:space="preserve">
+    <value>View less recalls</value>
+  </data>
+  <data name="ViewMoreRecalls" xml:space="preserve">
+    <value>View more recalls</value>
+  </data>
+  <data name="Wheelbase" xml:space="preserve">
+    <value>Wheelbase </value>
+  </data>
+  <data name="Wheels-Locks" xml:space="preserve">
+    <value>Wheels-Locks</value>
+  </data>
+  <data name="Width,Maxw/omirrors" xml:space="preserve">
+    <value>Width, Max w/o mirrors </value>
+  </data>
+  <data name="WiFiHotspot" xml:space="preserve">
+    <value>WiFi Hotspot</value>
+  </data>
+  <data name="WirelessCharging" xml:space="preserve">
+    <value>Wireless Charging</value>
+  </data>
+  <data name="WtDistributingTongue" xml:space="preserve">
+    <value>Wt Distributing Hitch - Max Tongue Wt.</value>
+  </data>
+  <data name="WtDistributingTrailer" xml:space="preserve">
+    <value>Wt Distributing Hitch - Max Trailer Wt.</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="TrimShowPaging" xml:space="preserve">
+    <value>Showing {0} of {1} trims</value>
+  </data>
+  <data name="DeadWeightHitch-MaxTongueWt." xml:space="preserve">
+    <value>Dead Weight Hitch - Max Tongue Wt.</value>
+  </data>
+  <data name="DeadWeightHitch-MaxTrailerWt." xml:space="preserve">
+    <value>Dead Weight Hitch - Max Trailer Wt.</value>
+  </data>
+  <data name="FifthWheelHitch-MaxTongueWt." xml:space="preserve">
+    <value>Fifth Wheel Hitch - Max Tongue Wt.</value>
+  </data>
+  <data name="FifthWheelHitch-MaxTrailerWt." xml:space="preserve">
+    <value>Fifth Wheel Hitch - Max Trailer Wt.</value>
+  </data>
+  <data name="MaximumTraileringCapacity" xml:space="preserve">
+    <value>Maximum Trailering Capacity</value>
+  </data>
+  <data name="WtDistributingHitch-MaxTongueWt." xml:space="preserve">
+    <value>Wt Distributing Hitch - Max Tongue Wt.</value>
+  </data>
+  <data name="WtDistributingHitch-MaxTrailerWt." xml:space="preserve">
+    <value>Wt Distributing Hitch - Max Trailer Wt.</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="Review" xml:space="preserve">
+    <value>Review</value>
+  </data>
+  <data name="NoModelOverview" xml:space="preserve">
+    <value>No model overview available</value>
+  </data>
+  <data name="CargoVolumewithRearSeatDown" xml:space="preserve">
+    <value>Cargo Volume with Rear Seat Down</value>
+  </data>
+  <data name="CargoVolumewithRearSeatUp" xml:space="preserve">
+    <value>Cargo Volume with Rear Seat Up</value>
+  </data>
+  <data name="ReviewsAndNews" xml:space="preserve">
+    <value>Reviews and News</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="4WheelDisc" xml:space="preserve">
+    <value>4 Wheel Disc</value>
+  </data>
+  <data name="4WheelDrum" xml:space="preserve">
+    <value>4 Wheel Drum</value>
+  </data>
+  <data name="All-wheel" xml:space="preserve">
+    <value>All-wheel</value>
+  </data>
+  <data name="FlexFuel" xml:space="preserve">
+    <value>Flex Fuel</value>
+  </data>
+  <data name="for" xml:space="preserve">
+    <value>for</value>
+  </data>
+  <data name="Front-wheel" xml:space="preserve">
+    <value>Front-wheel</value>
+  </data>
+  <data name="FrontDiscRearDrum" xml:space="preserve">
+    <value>Front Disc Rear Drum</value>
+  </data>
+  <data name="Gasoline" xml:space="preserve">
+    <value>Gasoline</value>
+  </data>
+  <data name="Gasolinedirectinjection" xml:space="preserve">
+    <value>Gasoline direct injection</value>
+  </data>
+  <data name="Hydrogen" xml:space="preserve">
+    <value>Hydrogen</value>
+  </data>
+  <data name="I-6twinturbopremiumunleaded" xml:space="preserve">
+    <value>I-6 twin turbo premium unleaded</value>
+  </data>
+  <data name="ManualSteering" xml:space="preserve">
+    <value>Manual Steering</value>
+  </data>
+  <data name="NoReviewsNews" xml:space="preserve">
+    <value>There are no reviews and news</value>
+  </data>
+  <data name="Port/directinjection" xml:space="preserve">
+    <value>Port/direct injection</value>
+  </data>
+  <data name="PowerSteering" xml:space="preserve">
+    <value>Power Steering</value>
+  </data>
+  <data name="V-6twinturboregularunleaded" xml:space="preserve">
+    <value>V-6 twin turbo regular unleaded</value>
+  </data>
+  <data name="V-8regularunleaded" xml:space="preserve">
+    <value>V-8 regular unleaded</value>
+  </data>
+  <data name="Wheeldrive" xml:space="preserve">
+    <value>Wheel drive</value>
+  </data>
+  <data name="CompareTitleBlank" xml:space="preserve">
+    <value>Car Comparison</value>
+  </data>
+  <data name="CompareTitle" xml:space="preserve">
+    <value>Compare {0}</value>
+  </data>
+  <data name="Drivability" xml:space="preserve">
+    <value>DRIVABILITY</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>FEATURES</value>
+  </data>
+  <data name="Powertrain" xml:space="preserve">
+    <value>POWERTRAIN</value>
+  </data>
+  <data name="Practicality" xml:space="preserve">
+    <value>PRACTICALITY</value>
+  </data>
+  <data name="Quality" xml:space="preserve">
+    <value>QUALITY</value>
+  </data>
+  <data name="Styling" xml:space="preserve">
+    <value>STYLING</value>
+  </data>
+  <data name="Usability/Ergonomics" xml:space="preserve">
+    <value>USABILITY/ERGONOMICS</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>VALUE</value>
+  </data>
+  <data name="OwnerScore" xml:space="preserve">
+    <value>Owner Score</value>
+  </data>
+  <data name="Deals" xml:space="preserve">
+    <value>Deals</value>
+  </data>
+  <data name="in" xml:space="preserve">
+    <value>in</value>
+  </data>
+  <data name="ReviewCompareTrims" xml:space="preserve">
+    <value>Review &amp; Compare: &lt;br /&gt; {0} Trims</value>
+  </data>
+  <data name="ReviewTrim" xml:space="preserve">
+    <value>Review: {0} Trim</value>
+  </data>
+    <data name="ReviewCompareTrimsSubTitle" xml:space="preserve">
+    <value>The {0} has &lt;strong&gt;{1} trims.&lt;/strong&gt; Below you will be able to review all the trims with the option to compare.</value>
+  </data>
+  <data name="ReviewTrimSubTitle" xml:space="preserve">
+    <value>The {0} has &lt;strong&gt;1 trim.&lt;/strong&gt; Below you will be able to review this trim in detail.</value>
+  </data>
+    <data name="TrimsAvailable" xml:space="preserve">
+    <value>trims available</value>
+  </data>
+    <data name="TrimAvailable" xml:space="preserve">
+    <value>trim available</value>
+  </data>
+    <data name="FilterByTrimLevel" xml:space="preserve">
+    <value>Filter by trim level</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>Clear all</value>
+  </data>
+  <data name="Of" xml:space="preserve">
+    <value>of</value>
+  </data>
+  <data name="AddToComparison" xml:space="preserve">
+    <value>Add to comparison</value>
+  </data>
+  <data name="ShowFullTrimSpecifications" xml:space="preserve">
+    <value>Show full trim specifications</value>
+  </data>
+  <data name="StartingAt" xml:space="preserve">
+    <value>Starting at</value>
+  </data>
+</root>
