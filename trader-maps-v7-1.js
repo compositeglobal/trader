@@ -183,14 +183,21 @@ function initMap() {
 
         let url = '';
 
-        if (lang === 'fr') {
+        if (params.get('qa') === 'true' && lang === 'fr') {
+
+            url = `https://apimqa.autohebdo.net/research/v1/dealer-search?oemName=` + manufacturer;
+
+        } else if (params.get('qa') === 'true') {
+
+            url = `https://apimqa.autotrader.ca/research/v1/dealer-search?oemName=` + manufacturer;
+
+        } else if (lang === 'fr') {
 
             url = `https://apimktprd01.autohebdo.net/research/v1/dealer-search?oemName=` + manufacturer;
 
         } else {
 
             url = `https://apimktprd01.autotrader.ca/research/v1/dealer-search?oemName=` + manufacturer;
-
         }
 
         // Fetch the data
