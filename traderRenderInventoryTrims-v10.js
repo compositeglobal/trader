@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (params.get('qa') === 'true' && lang === 'fr') {
             url = `https://apimqa.autohebdo.net/research/v1/trims-information?make=${make}&model=${model}&year=${year}`;
-        } else if (params.get('qa') === 'true') {
+        } else if (params.get('qa') === 'true' && lang === 'en') {
             url = `https://apimqa.autotrader.ca/research/v1/trims-information?make=${make}&model=${model}&year=${year}`;
         } else if (lang === 'fr') {
             url = `https://apimktprd01.autohebdo.net/research/v1/trims-information?make=${make}&model=${model}&year=${year}`;
