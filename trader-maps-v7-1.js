@@ -187,7 +187,7 @@ function initMap() {
 
             url = `https://apimqa.autohebdo.net/research/v1/dealer-search?oemName=` + manufacturer;
 
-        } else if (params.get('qa') === 'true') {
+        } else if (params.get('qa') === 'true' && lang === 'en') {
 
             url = `https://apimqa.autotrader.ca/research/v1/dealer-search?oemName=` + manufacturer;
 
