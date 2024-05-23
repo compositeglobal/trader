@@ -1,3 +1,35 @@
+(function() {
+/* Configuration and QA */
+
+let params = new URLSearchParams(window.location.search);
+
+let lang;
+if (params.get('qa') === 'true' && params.get('lang')) {
+    lang = params.get('lang');
+} else {
+    lang = document.documentElement.lang;
+}
+
+let manufacturer;
+if (params.get('qa') === 'true' && params.get('manufacturer')) {
+    manufacturer = params.get('manufacturer');
+} else {
+    const metaTag = document.querySelector('meta[name="manufacturer"]');
+    manufacturer = metaTag ? metaTag.getAttribute('content') : '';
+}
+
+let modelOverride;
+if (params.get('qa') === 'true' && params.get('model')) {
+    modelOverride = params.get('model');
+} else {
+    const metaTag = document.querySelector('meta[name="model"]');
+    modelOverride = metaTag ? metaTag.getAttribute('content') : '';
+}
+
+if (params.get('qa') === 'true') {
+    console.log('QA mode is activated - API requests are soruced from the "' + lang + '" language. The manufacturer has been set to "' + manufacturer + '".');
+}
+
 /* Inventory */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -6,15 +38,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (cards.length > 0) {
 
-        const manufacturerMeta = document.querySelector('meta[name="manufacturer"]');
-        const modelMeta = document.querySelector('meta[name="model"]');
+        const manufacturerMeta = manufacturer;
+        const modelMeta = modelOverride;
         const modelMinYear = document.querySelector('meta[name="modelYear"]');
-        let url = 'https://apimktprd01.autotrader.ca/research/v1/vehicle-inventory?make=';
+        let url = '';
+
+        if (params.get('qa') === 'true' && lang === 'fr') {
+            url = `https://apimqa.autohebdo.net/research/v1/vehicle-inventory?make=`;
+        } else if (params.get('qa') === 'true') {
+            url = `https://apimqa.autotrader.ca/research/v1/vehicle-inventory?make=`;
+        } else if (lang === 'fr') {
+            url = `https://apimktprd01.autohebdo.net/research/v1/vehicle-inventory?make=`;
+        } else {
+            url = `https://apimktprd01.autotrader.ca/research/v1/vehicle-inventory?make=`;
+        }
 
         if (manufacturerMeta) {
-            url += manufacturerMeta.getAttribute('content');
+            url += manufacturerMeta;
             if (modelMeta) {
-                url += '&model=' + modelMeta.getAttribute('content');
+                url += '&model=' + modelMeta;
             }
             if (modelMeta) {
                 url += '&minYear=' + modelMinYear.getAttribute('content');
@@ -252,12 +294,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (dataTrimsElements.length > 0) {
 
-        const make = document.querySelector('meta[name="make"]').content;
-        const model = document.querySelector('meta[name="model"]').content;
+        const make = manufacturer;
+        const model = modelOverride;
         const yearMeta = document.querySelector('meta[name="year"]');
         const year = yearMeta && yearMeta.content ? yearMeta.content : "2023";
 
-        const url = `https://apimqa.autotrader.ca/research/v1/trims-information?make=${make}&model=${model}&year=${year}`;
+        let url = '';
+
+        if (params.get('qa') === 'true' && lang === 'fr') {
+            url = `https://apimqa.autohebdo.net/research/v1/trims-information?make=${make}&model=${model}&year=${year}`;
+        } else if (params.get('qa') === 'true') {
+            url = `https://apimqa.autotrader.ca/research/v1/trims-information?make=${make}&model=${model}&year=${year}`;
+        } else if (lang === 'fr') {
+            url = `https://apimktprd01.autohebdo.net/research/v1/trims-information?make=${make}&model=${model}&year=${year}`;
+        } else {
+            url = `https://apimktprd01.autotrader.ca/research/v1/trims-information?make=${make}&model=${model}&year=${year}`;
+        }
 
         fetch(url, { credentials: 'include' })
             .then(response => response.json())
@@ -376,7 +428,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     totalEls.forEach(totalEl => {
                         if (totalEl) {
-                            totalEl.innerHTML = `${data.length} ${data.length === 1 ? 'trim' : 'trims'}`;
+
+                            if(lang === 'fr') {
+
+                            totalEl.innerHTML = `${data.length} ${data.length === 1 ? 'version' : 'versions'}`;
+
+                            } else { 
+
+                                totalEl.innerHTML = `${data.length} ${data.length === 1 ? 'trim' : 'trims'}`;
+
+                            }
+
                         }
                     });
                     window.Webflow && window.Webflow.destroy();
@@ -412,3 +474,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 });
+
+})();
