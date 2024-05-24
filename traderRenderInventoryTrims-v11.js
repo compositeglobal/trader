@@ -304,7 +304,7 @@ const mapping =
     "AutoTrader Review": "Avis AutoHebdo",
     "Auxiliary Audio Input": "Prise audio auxiliaire",
     "Back-Up Camera": "Caméra de recul",
-    "Base Curb Weight ": "Poids à vide ",
+    "Base Curb Weight": "Poids à vide ",
     "Based on": "Selon",
     "Battery Range": "Portée batterie (km)",
     "Bed Liner": "Doublure de caisse",
