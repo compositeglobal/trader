@@ -67,6 +67,7 @@
             fetch(url, { credentials: 'include' })
             .then(response => {
                 if (!response.ok) {
+                    console.log('Error fetching inventory data');
                     let inventoryCard = document.querySelector('.data-at-card');
                     if(inventoryCard){
                         inventoryCard.closest('section').remove();
@@ -310,6 +311,8 @@
                         card.addEventListener('click', handleClick);
                     });
 
+                })    .catch(error => {
+                    console.error('Fetch error:', error);
                 });
 
         }
