@@ -67,7 +67,7 @@
             fetch(url, { credentials: 'include' })
             .then(response => {
                 if (response.status === 204) {
-                    let inventoryCard = querySelector('.data-at-card');
+                    let inventoryCard = document.querySelector('.data-at-card');
                     if(inventoryCard){
                         inventoryCard.closest('section').remove();
                     }
