@@ -158,7 +158,7 @@ function initMap() {
 
         // Use a geocoding service to get the postcode from the latitude and longitude
         // This is a placeholder and should be replaced with a real geocoding service
-        fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${userLocation.lat},${userLocation.lng}&key=${mapKey}`)
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${userLocation.lat},${userLocation.lng}&key=${mapKey}&language=${lang}`)
             .then(response => response.json())
             .then(data => {
                 // Set the postcode in the element with the attribute data-map="postcode"
@@ -170,7 +170,7 @@ function initMap() {
                 // Add an event listener to update the user's location when the postcode is changed
                 postcodeElement.addEventListener('change', event => {
                     // Use a geocoding service to get the latitude and longitude from the postcode
-                    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${event.target.value}&key=${mapKey}`)
+                    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${event.target.value}&key=${mapKey}&language=${lang}`)
                         .then(response => response.json())
                         .then(data => {
                             userLocation.lat = data.results[0].geometry.location.lat;
