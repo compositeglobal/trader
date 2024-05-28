@@ -761,9 +761,11 @@
                                         }
 
                                         if (specValue.toLowerCase() === 'yes') {
-                                            newListItemClone.querySelector('[data-trims-spec=value]').innerHTML = 'Included';
+                                            newListItemClone.querySelector('[data-trims-spec=value]').innerHTML = lang === 'fr' ? 'Inclus' : 'Included';                                            
                                             newListItemClone.querySelector('[data-trims-spec=value]').className += ' trim_table_included';
                                         } else if (specValue.toLowerCase() === 'no') {
+                                            newListItemClone.querySelector('[data-trims-spec=value]').innerHTML = lang === 'fr' ? 'Inclus' : 'Non Inclus';                                            
+
                                             newListItemClone.querySelector('[data-trims-spec=value]').innerHTML = 'Not Available';
                                             newListItemClone.querySelector('[data-trims-spec=value]').className += ' trim_table_not-available';
                                         } else {
