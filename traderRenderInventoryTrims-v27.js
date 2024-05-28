@@ -67,10 +67,9 @@
             fetch(url, { credentials: 'include' })
                 .then(response => {
                     if (!response.ok || response.status === 204) {
-                        console.log('Error fetching inventory data');
-                        let inventoryCard = document.querySelector('.data-at-card');
+                        let inventoryCard = document.querySelector('[data-at-card]');
                         if (inventoryCard) {
-                            inventoryCard.closest('.section').remove();
+                            inventoryCard.closest('section').remove();
                         }
                         throw new Error('Stopping fetch due to error or 204 status');
                     }
