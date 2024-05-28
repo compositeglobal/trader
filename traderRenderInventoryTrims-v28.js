@@ -71,7 +71,7 @@
                         if (inventoryCard) {
                             inventoryCard.closest('section').remove();
                         }
-                        throw new Error('Stopping fetch due to error or 204 status');
+                        throw new Error('Failed Inventory fetch due to error. Status code: ${response.status}`);');
                     }
                     return response.json();
                 }).then(data => {
@@ -672,7 +672,7 @@
                     if (inventoryCard) {
                         inventoryCard.closest('section').remove();
                     }
-                    throw new Error('Stopping fetch due to error or 204 status');
+                    throw new Error('Failed trims fetch due to error. Status code: ${response.status}`);');
                 }
                 return response.json();
             }).then(data => {
