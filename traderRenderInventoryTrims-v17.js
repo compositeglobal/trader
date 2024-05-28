@@ -368,6 +368,7 @@
         "Dead Weight Hitch - Max Trailer Wt.": "Cap. de remorquage, attelage - Charge utile max.",
         "Differences": "Différences",
         "Displacement": "Cylindrée",
+        "DriverAssistance": "Aide à la conduite",
         "Driver Assistance": "Aide à la conduite",
         "Driver Adjustable Lumbar": "Ajustement lombaire conducteur",
         "Driver Air Bag": "Coussin gonflable conducteur",
