@@ -110,12 +110,34 @@
                                 keys.forEach(k => {
                                     value = value[k];
                                 });
+
                                 if (key === 'price') {
-                                    value = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'CAD', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(value);
+                                    if (lang === 'fr') {
+
+                                        value = new Intl.NumberFormat('fr-CA', { style: 'currency', currency: 'CAD', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(value);
+                                    } else { 
+
+                                        value = new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(value);                           
+                                
+                                    }
+
                                 }
+
+
+
                                 if (key === 'distance') {
-                                    value = `${value} km from you`;
+
+                                    if (lang === 'fr') {
+
+                                        value = `À ${value} km de vous`
+
+                                    } else {
+                                        value = `${value} km from you`;
+
+                                    }
+
                                 }
+
                                 el.innerHTML = value;
                             });
 
