@@ -65,8 +65,15 @@
 
 
             fetch(url, { credentials: 'include' })
-                .then(response => response.json())
-                .then(data => {
+            .then(response => {
+                if (response.status === 204) {
+                    let inventoryCard = querySelector('.data-at-card');
+                    if(inventoryCard){
+                        inventoryCard..closest('section').remove();
+                    }
+                }
+                return response.json();
+            }).then(data => {
                     document.body.removeAttribute('data-skeleton');
 
                     // If there are more cards than vehicles, remove the extra cards
