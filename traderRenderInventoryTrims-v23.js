@@ -65,16 +65,16 @@
 
 
             fetch(url, { credentials: 'include' })
-            .then(response => {
-                if (!response.ok) {
-                    console.log('Error fetching inventory data');
-                    let inventoryCard = document.querySelector('.data-at-card');
-                    if(inventoryCard){
-                        inventoryCard.closest('section').remove();
+                .then(response => {
+                    if (!response.ok || response.status === 204) {
+                        console.log('Error fetching inventory data');
+                        let inventoryCard = document.querySelector('.data-at-card');
+                        if (inventoryCard) {
+                            inventoryCard.closest('section').remove();
+                        }
                     }
-                }
-                return response.json();
-            }).then(data => {
+                    return response.json();
+                }).then(data => {
                     document.body.removeAttribute('data-skeleton');
 
                     // If there are more cards than vehicles, remove the extra cards
@@ -123,10 +123,10 @@
                                     if (lang === 'fr') {
 
                                         value = new Intl.NumberFormat('fr-CA', { style: 'currency', currency: 'CAD', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(value);
-                                    } else { 
+                                    } else {
 
-                                        value = new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(value);                           
-                                
+                                        value = new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(value);
+
                                     }
 
                                 }
@@ -311,7 +311,7 @@
                         card.addEventListener('click', handleClick);
                     });
 
-                })    .catch(error => {
+                }).catch(error => {
                     console.error('Fetch error:', error);
                 });
 
@@ -772,10 +772,10 @@
                                         }
 
                                         if (specValue.toLowerCase() === 'yes') {
-                                            newListItemClone.querySelector('[data-trims-spec=value]').innerHTML = lang === 'fr' ? 'Inclus' : 'Included';                                            
+                                            newListItemClone.querySelector('[data-trims-spec=value]').innerHTML = lang === 'fr' ? 'Inclus' : 'Included';
                                             newListItemClone.querySelector('[data-trims-spec=value]').className += ' trim_table_included';
                                         } else if (specValue.toLowerCase() === 'no') {
-                                            newListItemClone.querySelector('[data-trims-spec=value]').innerHTML = lang === 'fr' ? 'Inclus' : 'Non Inclus';                                            
+                                            newListItemClone.querySelector('[data-trims-spec=value]').innerHTML = lang === 'fr' ? 'Inclus' : 'Non Inclus';
                                             newListItemClone.querySelector('[data-trims-spec=value]').className += ' trim_table_not-available';
                                         } else {
                                             newListItemClone.querySelector('[data-trims-spec=value]').innerHTML = specValue;
