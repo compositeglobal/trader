@@ -666,8 +666,16 @@
             }
 
             fetch(url, { credentials: 'include' })
-                .then(response => response.json())
-                .then(data => {
+            .then(response => {
+                if (!response.ok || response.status === 204) {
+                    let inventoryCard = document.querySelector('[data-trims]');
+                    if (inventoryCard) {
+                        inventoryCard.closest('section').remove();
+                    }
+                    throw new Error('Stopping fetch due to error or 204 status');
+                }
+                return response.json();
+            }).then(data => {
 
                     dataTrimsElements.forEach(dataTrims => {
 
