@@ -69,7 +69,7 @@
                 if (response.status === 204) {
                     let inventoryCard = querySelector('.data-at-card');
                     if(inventoryCard){
-                        inventoryCard..closest('section').remove();
+                        inventoryCard.closest('section').remove();
                     }
                 }
                 return response.json();
