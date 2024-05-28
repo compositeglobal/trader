@@ -139,7 +139,7 @@ function initMap() {
                     const postcode = postcodeElement.value;
 
                     // Use Google Maps Geocoding API to get the latitude and longitude from the postcode
-                    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${postcode}&key=${mapKey}`)
+                    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${postcode}&key=${mapKey}&language=${lang}`)
                         .then(response => response.json())
                         .then(data => {
                             const location = data.results[0].geometry.location;
