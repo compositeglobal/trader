@@ -72,6 +72,7 @@
                         if (inventoryCard) {
                             inventoryCard.closest('section').remove();
                         }
+                        throw new Error('Stopping fetch due to error or 204 status');
                     }
                     return response.json();
                 }).then(data => {
