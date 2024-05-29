@@ -1,3 +1,6 @@
+
+(function() {
+
 // Configure variables for APIs 
 
 const mapKey = 'AIzaSyAMf4ck6tVB7e6xjH0k2lAF1ymsZJUHP3I';
@@ -489,3 +492,4 @@ function initMap() {
     }).catch(error => console.error('Error:', error));
 
 }
+})();
