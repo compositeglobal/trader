@@ -783,7 +783,7 @@
                                             newListItemClone.querySelector('[data-trims-spec=value]').innerHTML = lang === 'fr' ? 'Inclus' : 'Included';
                                             newListItemClone.querySelector('[data-trims-spec=value]').className += ' trim_table_included';
                                         } else if (specValue.toLowerCase() === 'no') {
-                                            newListItemClone.querySelector('[data-trims-spec=value]').innerHTML = lang === 'fr' ? 'Inclus' : 'Non Inclus';
+                                            newListItemClone.querySelector('[data-trims-spec=value]').innerHTML = lang === 'fr' ? 'Non Inclus' : 'Not Included';
                                             newListItemClone.querySelector('[data-trims-spec=value]').className += ' trim_table_not-available';
                                         } else {
                                             newListItemClone.querySelector('[data-trims-spec=value]').innerHTML = specValue;
