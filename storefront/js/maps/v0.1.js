@@ -1,5 +1,3 @@
-(function() {
-
 // Configure variables for APIs 
 
 const mapKey = 'AIzaSyAMf4ck6tVB7e6xjH0k2lAF1ymsZJUHP3I';
@@ -500,5 +498,3 @@ script.src = `https://maps.googleapis.com/maps/api/js?key=${mapKey}&callback=ini
 
 // Append the script element to the body of the document
 document.body.appendChild(script);
-
-})();
