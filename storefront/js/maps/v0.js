@@ -1,3 +1,5 @@
+(function() {
+
 // Configure variables for APIs 
 
 const mapKey = 'AIzaSyAMf4ck6tVB7e6xjH0k2lAF1ymsZJUHP3I';
@@ -489,3 +491,14 @@ function initMap() {
     }).catch(error => console.error('Error:', error));
 
 }
+
+// Create a new script element
+let script = document.createElement('script');
+
+// Set the source of the script to the Google Maps API
+script.src = `https://maps.googleapis.com/maps/api/js?key=${mapKey}&callback=initMap`;
+
+// Append the script element to the body of the document
+document.body.appendChild(script);
+
+})();
