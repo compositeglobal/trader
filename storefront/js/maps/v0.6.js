@@ -14,7 +14,7 @@ function runIfMapExists() {
     }
     
     let manufacturer;
-    if window.location.hostname.includes('beta') && (params.get('qa') === 'true' && params.get('manufacturer')) {
+    if (window.location.hostname.includes('beta') && (params.get('qa') === 'true' && params.get('manufacturer'))) {
         manufacturer = params.get('manufacturer');
     } else {
         const metaTag = document.querySelector('meta[name="manufacturer"]');
