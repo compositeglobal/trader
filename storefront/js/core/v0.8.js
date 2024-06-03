@@ -821,6 +821,8 @@
                         window.Webflow && window.Webflow.require('ix2').init();
                         document.dispatchEvent(new Event('readystatechange'));
 
+                        document.body.removeAttribute('data-skeleton-trims');
+
                         // Mirror Clicks
 
                         const mirrorElements = document.querySelectorAll('[mirror-click]');
@@ -846,9 +848,6 @@
 
                     });
                 });
-
-                document.body.removeAttribute('data-skeleton-trims');
-
 
         }
     });
