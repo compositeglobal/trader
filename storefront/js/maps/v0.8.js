@@ -1,3 +1,5 @@
+    if (document.querySelector('[data-map]')) {
+    
     // Configure variables for APIs 
     
     const mapKey = 'AIzaSyBbYP8SR4xUPr8NHLx6rlBaaz-k_72G7N0';
@@ -499,6 +501,5 @@
     
     // Append the script element to the body of the document
     document.body.appendChild(script);
-    
 
-    
+}
