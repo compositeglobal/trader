@@ -847,6 +847,9 @@
                     });
                 });
 
+                document.body.removeAttribute('data-skeleton-trims');
+
+
         }
     });
 
