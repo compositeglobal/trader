@@ -1,5 +1,3 @@
-function runIfMapExists() {
-
     // Configure variables for APIs 
     
     const mapKey = 'AIzaSyBbYP8SR4xUPr8NHLx6rlBaaz-k_72G7N0';
@@ -502,10 +500,5 @@ function runIfMapExists() {
     // Append the script element to the body of the document
     document.body.appendChild(script);
     
-    }
-    
-    if(document.querySelector('.map')) {
-        runIfMapExists();
-    };
-    
+
     
