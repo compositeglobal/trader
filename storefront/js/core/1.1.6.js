@@ -1219,13 +1219,6 @@ fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${userLocation.l
                         marker.setIcon('https://uploads-ssl.webflow.com/64c57def3601adf69171da07/65e894381acc2469159cdc1c_dormant.svg');
                         li.classList.remove('hover');
                     });
-                
-                    marker.addListener('mouseover', () => {
-                        clearTimeout(timeoutId);
-                        infoWindow.open(map, marker);
-                        marker.setIcon('https://uploads-ssl.webflow.com/64c57def3601adf69171da07/65e894396b30c86b21522c13_active.svg');
-                        li.classList.add('hover');
-                    });
 
                     // Clone the template and populate it with data
 
