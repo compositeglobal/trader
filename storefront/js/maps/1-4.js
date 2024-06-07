@@ -282,7 +282,7 @@
 
                         let dataPush = {
                             'event': type,
-                            'listKey': elementTitle.textContent.replace(/\n/g, ' ').trim(),
+                            'listKey': elementTitle.dataset.data-push-title,
                             'ecommerce': { 'item_list_name': 'storefront - ' + elementTitle.textContent.replace(/\n/g, ' ').trim(), items }
                         };
 
