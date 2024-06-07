@@ -282,7 +282,7 @@
 
                         let dataPush = {
                             'event': type,
-                            'listKey': elementTitle.dataset.data-push-title.replace('[brand]', manufacturerMeta),
+                            'listKey': elementTitle.dataset.dataPushTitle.replace('[brand]', manufacturerMeta).replace('[model]', modelMeta),
                             'ecommerce': { 'item_list_name': 'storefront - ' + elementTitle.textContent.replace(/\n/g, ' ').trim(), items }
                         };
 
