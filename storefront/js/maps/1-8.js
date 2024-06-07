@@ -279,10 +279,11 @@
 
                     function generateDataPush(items, type, vehicle) {
                         let elementTitle = document.querySelector('[data-push-title]');
+                        let dataPushTitleValue = elementTitle.dataset.pushTitle;
 
                         let dataPush = {
                             'event': type,
-                            'listKey': elementTitle.dataset.data-push-title.replace('[brand]', manufacturerMeta).replace('[model]', modelMeta),
+                            'listKey': dataPushTitleValue.replace('[brand]', manufacturerMeta).replace('[model]', modelMeta),
                             'ecommerce': { 'item_list_name': 'storefront - ' + elementTitle.textContent.replace(/\n/g, ' ').trim(), items }
                         };
 
