@@ -293,7 +293,6 @@
 
                         return dataPush;
                     }
-
                     let dataPush = generateDataPush(items, 'view_item_list');
 
                     dataLayer.push(dataPush);
