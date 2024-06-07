@@ -1122,6 +1122,8 @@ console.log(data)
                 const list = document.querySelector('[data-map-list]');
                 const template = list.firstElementChild;
 
+                let currentInfoWindow = null;
+
                 // Add a marker and a list item for each location
                 locations.forEach((location, index) => {
                     location.distance = calculateDistance(userLocation.lat, userLocation.lng, location.latitude, location.longitude);
@@ -1157,7 +1159,7 @@ console.log(data)
                         directionsCopy = 'Get Directions';
 
                     }
-                    const infoWindow = new google.maps.InfoWindow({
+                    let infoWindow = new google.maps.InfoWindow({
                         content: `
                             <div class="maps_infowindow maps_tip_heading">
                             <div class="maps_infowindow_header">
@@ -1203,43 +1205,32 @@ console.log(data)
                                          `
                     });
 
-                    let timeoutId = null;
-
-                    // Add a click event listener to the marker
+                    let timeoutId = null;           
+                    
                     marker.addListener('click', () => {
-                        // Open the InfoWindow when the marker is clicked
-                        infoWindow.close();
+                        if (currentInfoWindow) {
+                            currentInfoWindow.close();
+                        }
                         infoWindow.open(map, marker);
+                        currentInfoWindow = infoWindow;
                         marker.setIcon('https://uploads-ssl.webflow.com/64c57def3601adf69171da07/65e894396b30c86b21522c13_active.svg');
                         li.classList.add('hover');
                     });
-
-                    // Add a click event listener to the map
+                
                     google.maps.event.addListener(map, 'click', () => {
-                        // Close the InfoWindow when the map is clicked
-                        infoWindow.close();
-                        infoWindow.close();
+                        if (currentInfoWindow) {
+                            currentInfoWindow.close();
+                            currentInfoWindow = null;
+                        }
                         marker.setIcon('https://uploads-ssl.webflow.com/64c57def3601adf69171da07/65e894381acc2469159cdc1c_dormant.svg');
                         li.classList.remove('hover');
                     });
-
-                    // Show the InfoWindow and change the icon when the marker is hovered
+                
                     marker.addListener('mouseover', () => {
-                        infoWindow.close();
-                        clearTimeout(timeoutId); // Clear the timeout if it's set
+                        clearTimeout(timeoutId);
                         infoWindow.open(map, marker);
-                        marker.setIcon('https://uploads-ssl.webflow.com/64c57def3601adf69171da07/65e894396b30c86b21522c13_active.svg'); // Set the icon to a hover image
+                        marker.setIcon('https://uploads-ssl.webflow.com/64c57def3601adf69171da07/65e894396b30c86b21522c13_active.svg');
                         li.classList.add('hover');
-                    });
-
-                    // Hide the InfoWindow and change the icon back when the mouse leaves the marker
-                    marker.addListener('mouseout', () => {
-                        // Set a timeout to close the InfoWindow after 1 second
-                        timeoutId = setTimeout(() => {
-                            infoWindow.close();
-                            marker.setIcon('https://uploads-ssl.webflow.com/64c57def3601adf69171da07/65e894381acc2469159cdc1c_dormant.svg'); // Set the icon back to the default image
-                            li.classList.remove('hover');
-                        }, 1000); // 1000 milliseconds = 1 second
                     });
 
                     // Clone the template and populate it with data
