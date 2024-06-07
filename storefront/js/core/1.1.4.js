@@ -859,7 +859,7 @@ if (document.querySelector('[data-map]')) {
 
     // Configure variables for APIs 
 
-    const mapKey = 'AIzaSyAMf4ck6tVB7e6xjH0k2lAF1ymsZJUHP3I';
+    const mapKey = 'AIzaSyAJ4RR6p9mwLCt8xALz5-HHcvUO0btxYJI';
     
     let params = new URLSearchParams(window.location.search);
 
