@@ -1042,14 +1042,8 @@ fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${userLocation.l
     .then(response => response.json())
     .then(data => {
 
-console.log(data)
-
         // Set the postcode in the element with the attribute data-map="postcode"
         const postcodeElement = document.querySelector('[data-map="postcode"]');
-        console.log(postcodeElement);
-
-        console.log(data.results)
-        console.log(data.results[0])
 
         if (postcodeElement && data.results && data.results[0]) {
             const addressComponent = data.results[0].address_components.find(component => component.types.includes('postal_code'));
