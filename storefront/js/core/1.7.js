@@ -860,8 +860,9 @@ if (document.querySelector('[data-map]')) {
 
     // Configure variables for APIs 
 
-    const mapKey = 'AIzaSyBbYP8SR4xUPr8NHLx6rlBaaz-k_72G7N0';
-    
+    // const mapKey = 'AIzaSyBbYP8SR4xUPr8NHLx6rlBaaz-k_72G7N0';
+    const mapKey = 'AIzaSyAMf4ck6tVB7e6xjH0k2lAF1ymsZJUHP3I';
+
     let params = new URLSearchParams(window.location.search);
 
     let lang;
