@@ -1014,7 +1014,7 @@ if (!isNaN(latParam) && !isNaN(longParam)) {
             if (updateLocationElement) {
                 updateLocationElement.addEventListener('click', () => {
                     // Get the postcode from the element with data-map="postcode"
-                    // const postcodeElement = document.querySelector('[data-map="postcode"]');
+                    const postcodeElement = document.querySelector('[data-map="postcode"]');
                     if (postcodeElement) {
                         const postcode = postcodeElement.value;
 
